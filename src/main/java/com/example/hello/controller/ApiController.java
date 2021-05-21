@@ -1,0 +1,35 @@
+package com.example.hello.controller;
+
+import com.example.hello.dto.User;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController // 해당 Class 는 REST API 처리하는 Controller
+@RequestMapping("/api") // URL 을 지정해주는 Annotation
+public class ApiController {
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "hello spring boot!";
+    }
+
+    @GetMapping("/text")
+    public String text(String account) {
+        return account;
+    }
+
+    // JSON
+    // req -> object mapper -> object -> method -> object -> object mapper -> json -> resp
+    @PostMapping("/json")
+    public User json(@RequestBody User user) {
+        return user;
+    }
+
+    // ResponseEntity를 사용해 상태 코드와 데이터, 헤더 등 값을 같이 내려줄 수 있다. (추천)
+    // 내려줄 값을 더욱 명확하게 내려준다.
+    @PutMapping("/putApi")
+    public ResponseEntity<User> put(@RequestBody User user) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(user);
+    }
+}
