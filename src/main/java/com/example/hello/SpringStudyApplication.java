@@ -5,18 +5,22 @@ import com.example.hello.ioc.Encoder;
 import com.example.hello.ioc.UrlEncoder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 import java.util.Base64;
 
 @SpringBootApplication
+@ServletComponentScan
+@EnableAsync
 public class SpringStudyApplication {
 
     public static void main(String[] args) {
 
         SpringApplication.run(SpringStudyApplication.class, args);
-        System.out.println(Base64.getEncoder().encodeToString("hhh@hhh.com".getBytes()));
+        //System.out.println(Base64.getEncoder().encodeToString("hhh@hhh.com".getBytes()));
 
         /*
         ApplicationContext context = ApplicationContextProvider.getContext();
@@ -33,6 +37,7 @@ public class SpringStudyApplication {
 
 
 // 한 클래스 안에 여러 빈을 등록할 수 있다.
+/*
 @Configuration
 class AppConfig {
 
@@ -45,4 +50,4 @@ class AppConfig {
     public Encoder encoder(UrlEncoder urlEncoder) {
         return new Encoder(urlEncoder);
     }
-}
+}*/
