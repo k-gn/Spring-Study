@@ -39,7 +39,7 @@ public class GlobalFilter implements Filter {
         String reqContent = new String(httpServletRequest.getContentAsByteArray());
         log.info("request url : {}, requestBody : {}", url, reqContent);
 
-        //여기서 내용을 다빼버리기 떄문에 밑에 copyBodyToResponse() 사용!
+        //여기서 내용을 다 빼버리기 때문에 밑에 copyBodyToResponse() 사용!
         String resContent = new String(httpServletResponse.getContentAsByteArray());
         int httpStatus = httpServletResponse.getStatus();
 

@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 // 어노테이션에 대한 검증 로직이 있는 Validator
+// ConstraintValidator<어노테이션, 들어가는 값>
 public class YearMonthValidator implements ConstraintValidator<YearMonth, String> {
 
     private String pattern;

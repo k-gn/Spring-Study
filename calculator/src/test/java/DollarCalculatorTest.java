@@ -22,6 +22,7 @@ public class DollarCalculatorTest {
     @BeforeEach
     public void init() {
         // 앞에 leninet를 붙이게 되면 해당 stubbing은 optional한 성격을 가지게 되어서 사용하지 않더라도 예외를 발생하지 않는다.
+        // 모의 객체 생성 및 모의 객체의 동작을 지정하는 것을 Stubbing이라고 한다.
         // marketApi.connect()가 일어날 때 내가 원하는 금액을 리턴
         // api를 호출하지 않아도 응답을 지정해줄 수 있다.
         // 이 후엔 내가 만든 메소들이 내가 기대하는데로 동작하는지 결과를 확인하는 것 -> 단위 테스트
