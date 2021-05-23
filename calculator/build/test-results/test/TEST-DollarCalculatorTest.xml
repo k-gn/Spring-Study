@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="DollarCalculatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-23T01:24:24" hostname="DESKTOP-4QTSG7R" time="1.195">
+  <properties/>
+  <testcase name="mock()" classname="DollarCalculatorTest" time="1.195"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
