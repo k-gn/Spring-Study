@@ -41,6 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         );
     }
 
+    // admin 계정도 user 가 할 수 있는 작업을 전부 할 수 있도록 권한 설정
     @Bean
     RoleHierarchy roleHierarchy(){
         RoleHierarchyImpl roleHierarchy = new RoleHierarchyImpl();
@@ -73,6 +74,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
+
+        // resources (html, css ..) pass
         web.ignoring()
                 .requestMatchers(
                         PathRequest.toStaticResources().atCommonLocations()
