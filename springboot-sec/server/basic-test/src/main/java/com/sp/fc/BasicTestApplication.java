@@ -7,8 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BasicTestApplication {
 
     public static void main(String[] args) {
-        Person person = Person.builder().name("test").build();
-        System.out.println(person);
-//        SpringApplication.run(BasicTestApplication.class, args);
+//        Person person = Person.builder().name("test").build();
+//        System.out.println(person);
+        SpringApplication.run(BasicTestApplication.class, args);
     }
 }
