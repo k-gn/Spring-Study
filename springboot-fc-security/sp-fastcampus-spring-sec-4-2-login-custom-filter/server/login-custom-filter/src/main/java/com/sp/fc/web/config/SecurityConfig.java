@@ -25,12 +25,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
+    /* * 스프링 시큐리티가 사용자를 인증하는 방법이 담긴 객체.
+    * 인증에 대한 지원을 설정 */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(studentManager);
         auth.authenticationProvider(teacherManager);
     }
 
+    /*
+     * 스프링 시큐리티 규칙
+     * 대부분의 설정
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         CustomLoginFilter filter = new CustomLoginFilter(authenticationManager());
@@ -39,18 +45,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         request.antMatchers("/", "/login").permitAll()
                         .anyRequest().authenticated()
                 )
-                .formLogin(
+                .formLogin( // UsernamePasswordAuthenticationFilter 동작
                         login->login.loginPage("/login")
                         .permitAll()
                         .defaultSuccessUrl("/", false)
                         .failureUrl("/login-error")
                 )
-                .addFilterAt(filter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterAt(filter, UsernamePasswordAuthenticationFilter.class) // customLoginFilter 등록
                 .logout(logout->logout.logoutSuccessUrl("/"))
                 .exceptionHandling(e->e.accessDeniedPage("/access-denied"))
                 ;
+
+        // UsernamePasswordAuthenticationFilter 와 customLoginFilter 를 둘다 허용해도 customLoginFilter 가 먼저 수행되서 큰 문제가 없다.
     }
 
+    /* * 스프링 시큐리티 룰을 무시하게 하는 Url 규칙(여기 등록하면 규칙 적용하지 않음)
+    * 스프링시큐리티 앞단 설정들을 할 수 있다. */
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()

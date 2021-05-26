@@ -5,9 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc84945-c0da-483b-8f62-4b0193d80b51" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-1-BasicAuthenticationFilter-Test/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-1-BasicAuthenticationFilter-Test/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test/.idea/modules/sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/login-custom-filter/src/main/java/com/sp/fc/web/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/login-custom-filter/src/main/java/com/sp/fc/web/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/login-custom-filter/src/main/java/com/sp/fc/web/student/StudentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/login-custom-filter/src/main/java/com/sp/fc/web/student/StudentManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-1-BasicAuthenticationFilter-Test/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-1-BasicAuthenticationFilter-Test/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-1-BasicAuthenticationFilter-Test/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-1-BasicAuthenticationFilter-Test/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-1-BasicAuthenticationFilter-Test/.idea/modules.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,23 +37,29 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="1t20Nqg49zpVbzPcOQtnssKRnuF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-1-BasicAuthenticationFilter-Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Spring Boot.BasicSecurityTestApp">
+  <component name="RunManager" selected="Spring Boot.CustomLoginApp">
     <configuration name="BasicSecurityTestApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="sp-fastcampus-spring-sec.server-basic-test.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.sp.fc.web.BasicSecurityTestApp" />
@@ -47,7 +67,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomLoginApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="CustomLoginApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
       <module name="sp-fastcampus-spring-sec.server-login-custom-filter.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.sp.fc.web.CustomLoginApp" />
       <method v="2">
@@ -61,6 +81,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.CustomLoginApp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -72,6 +97,10 @@
       <updated>1621951841857</updated>
       <workItem from="1621951843583" duration="4221000" />
       <workItem from="1621996292081" duration="481000" />
+      <workItem from="1621996889335" duration="52000" />
+      <workItem from="1621997051080" duration="1446000" />
+      <workItem from="1621999005797" duration="488000" />
+      <workItem from="1622008750578" duration="411000" />
     </task>
     <servers />
   </component>

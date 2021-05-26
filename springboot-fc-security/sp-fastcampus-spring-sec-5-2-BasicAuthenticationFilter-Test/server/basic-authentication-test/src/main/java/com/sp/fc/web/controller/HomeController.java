@@ -14,7 +14,8 @@ public class HomeController {
     }
 
     @PostMapping("/greeting")
-    public String greeting(@RequestBody String name){
+    public String greeting(@RequestBody String name, @RequestBody int age){
+        System.out.println(age);
         return "hello "+name;
     }
 

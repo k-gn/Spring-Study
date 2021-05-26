@@ -24,12 +24,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 );
     }
 
+    // authorizeRequests() : 시큐리티 처리에 HttpServletRequest를 이용 - 요청에 대한 권한을 지정
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
                 .authorizeRequests().anyRequest().authenticated()
                 .and()
+                // Basic 방식 적용 - Basic Authentication을 사용
                 .httpBasic()
                 ;
     }
