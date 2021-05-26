@@ -21,6 +21,8 @@ public class TeacherController {
 
     @PreAuthorize("hasAnyAuthority('ROLE_TEACHER')")
     @GetMapping("/main")
+    // @authenticationprincipal : UserDetailsService에서 Return한 객체 를 파라메터로 직접 받아 사용
+    // getPrincipal() 로 리턴 받을 수 있는 객체를 바로 주입받을 수가 있음
     public String main(@AuthenticationPrincipal Teacher teacher, Model model){
         model.addAttribute("studentList", studentManager.myStudents(teacher.getId()));
         return "TeacherMain";

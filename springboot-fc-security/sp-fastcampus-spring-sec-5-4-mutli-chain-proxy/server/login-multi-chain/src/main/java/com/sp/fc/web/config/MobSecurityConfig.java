@@ -13,8 +13,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-@Order(1)
-@Configuration
+// SPA 나 MOBILE 용
+@Order(1) // 시큐리티 동작 순서 설정
+@Configuration // 중복 선언 안하고 @Configuration 해야함
 public class MobSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final StudentManager studentManager;

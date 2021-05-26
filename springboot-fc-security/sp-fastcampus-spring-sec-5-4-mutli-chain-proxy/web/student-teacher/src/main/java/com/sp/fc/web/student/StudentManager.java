@@ -58,12 +58,12 @@ public class StudentManager implements AuthenticationProvider, InitializingBean 
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        Set.of(
-                new Student("hong", "홍길동", Set.of(new SimpleGrantedAuthority("ROLE_STUDENT")), "choi"),
-                new Student("kang", "강아지", Set.of(new SimpleGrantedAuthority("ROLE_STUDENT")), "choi"),
-                new Student("rang", "호랑이", Set.of(new SimpleGrantedAuthority("ROLE_STUDENT")), "choi")
-        ).forEach(s->
-            studentDB.put(s.getId(), s)
-        );
+//        Set.of(
+//                new Student("hong", "홍길동", Set.of(new SimpleGrantedAuthority("ROLE_STUDENT")), "choi"),
+//                new Student("kang", "강아지", Set.of(new SimpleGrantedAuthority("ROLE_STUDENT")), "choi"),
+//                new Student("rang", "호랑이", Set.of(new SimpleGrantedAuthority("ROLE_STUDENT")), "choi")
+//        ).forEach(s->
+//            studentDB.put(s.getId(), s)
+//        );
     }
 }

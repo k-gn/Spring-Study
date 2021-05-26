@@ -1,4 +1,4 @@
-
+// 공통된 설정을 가져옴
 apply from: "../web-common.gradle"
 
 dependencies {

@@ -32,7 +32,7 @@ public class MultiChainProxyTest {
                 });
 
         assertNotNull(resp.getBody());
-        assertEquals(3, resp.getBody().size());
+        assertEquals(0, resp.getBody().size());
     }
 
 }

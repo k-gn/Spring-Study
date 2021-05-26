@@ -72,7 +72,7 @@ public class BasicAuthenticationTest {
     @DisplayName("4. POST 인증") // 데이터에 변경을 가하는 작업
     @Test
     void test_4() {
-
+        // BODY 안에 데이터를 한번에 보내야 한다. @RequestBody 를 두번 써서 받을 수 없는 듯.
         TestRestTemplate testClient = new TestRestTemplate("user1", "1111");
         ResponseEntity<String> resp = testClient.postForEntity(greetingUrl(), "jongwon", String.class);
         assertEquals("hello jongwon", resp.getBody());
