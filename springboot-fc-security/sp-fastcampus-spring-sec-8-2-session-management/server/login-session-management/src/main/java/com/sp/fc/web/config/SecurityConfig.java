@@ -124,7 +124,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                        return super.createSuccessfulAuthentication(request, user);
                     }
                 };
-        service.setAlwaysRemember(true);
+        service.setAlwaysRemember(true); // 항상 동작
         return service;
     }
 
@@ -158,10 +158,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 )
                 .sessionManagement(
                         s->s
-//                                .sessionCreationPolicy(p-> SessionCreationPolicy.S)
-                                .sessionFixation(sessionFixationConfigurer -> sessionFixationConfigurer.changeSessionId())
-                        .maximumSessions(2)
-                        .maxSessionsPreventsLogin(true)
+//                                .sessionCreationPolicy(p-> SessionCreationPolicy.)
+                                .sessionFixation(sessionFixationConfigurer -> sessionFixationConfigurer.changeSessionId()) // 고정 세션 보호
+                        .maximumSessions(2) // 최대 허용 가능 세션 수, -1인 경우 무제한 세션
+                        .maxSessionsPreventsLogin(true) // 동시 로그인 차단, false인 경우 기존 세션 만료
                         .expiredUrl("/session-expired")
                 )
                 ;

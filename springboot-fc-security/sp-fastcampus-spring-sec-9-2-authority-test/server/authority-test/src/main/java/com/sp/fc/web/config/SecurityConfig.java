@@ -58,7 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .httpBasic().and()
-                .authorizeRequests(
+                .authorizeRequests( // FilterSecurityInterceptor
                         authority->authority
                                 .mvcMatchers("/greeting").hasRole("USER")
                                 .anyRequest().authenticated()
