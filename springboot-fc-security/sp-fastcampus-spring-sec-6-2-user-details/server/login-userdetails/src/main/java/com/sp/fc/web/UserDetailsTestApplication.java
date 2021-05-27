@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+// 스캔 범위 설정
 @SpringBootApplication(scanBasePackages = {
         "com.sp.fc.user",
         "com.sp.fc.web"

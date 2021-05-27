@@ -29,7 +29,10 @@ public class SpUser implements UserDetails {
 
     private String password;
 
+    // Fetch Type 은 JPA 가 하나의 Entity 를 조회할 때, 연관관계에 있는 객체들을 어떻게 가져올 것이냐를 나타내는 설정값
+    // cascade : Entity의 상태 변화를 전파시키는 옵션
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    // 조인할 외래키 설정
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name="user_id"))
     private Set<SpAuthority> authorities;
 

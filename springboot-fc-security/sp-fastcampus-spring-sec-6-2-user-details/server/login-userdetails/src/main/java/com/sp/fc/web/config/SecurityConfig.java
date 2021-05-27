@@ -30,6 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(spUserService);
     }
 
+    // 기본적으로 passwordEncoder가 bean 등록 되어있어야 로그인이 된다.
     @Bean
     PasswordEncoder passwordEncoder(){
         return NoOpPasswordEncoder.getInstance();

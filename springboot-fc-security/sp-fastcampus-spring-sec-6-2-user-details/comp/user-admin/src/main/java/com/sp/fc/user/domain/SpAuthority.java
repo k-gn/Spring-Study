@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Table(name="sp_user_authority")
-@IdClass(SpAuthority.class)
+@IdClass(SpAuthority.class) // 복합키 매핑
 public class SpAuthority implements GrantedAuthority {
 
     @Id
