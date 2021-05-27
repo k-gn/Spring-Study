@@ -7,6 +7,7 @@ public class NameCheck {
 
 
     public boolean check(String name){
+
         return name.equals("jongwon");
     }
 

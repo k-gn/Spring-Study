@@ -26,6 +26,7 @@ public class MethodSecurityConfiguration extends GlobalMethodSecurityConfigurati
     @Autowired
     private CustomPermissionEvaluator permissionEvaluator;
 
+    // 핸들러를 오버라이딩 해서 CustomMethodSecurityExpressionRoot 와 CustomPermissionEvaluator 를 적용
     @Override
     protected MethodSecurityExpressionHandler createExpressionHandler() {
         DefaultMethodSecurityExpressionHandler handler = new DefaultMethodSecurityExpressionHandler(){

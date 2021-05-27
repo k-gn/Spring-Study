@@ -55,8 +55,9 @@ public class SpELTest {
     @Test
     void test_4() {
 
+        // spring container context test
         StandardEvaluationContext ctx = new StandardEvaluationContext();
-        ctx.setBeanResolver(new BeanResolver() {
+        ctx.setBeanResolver(new BeanResolver() { // bean name 으로 bean 을 찾아준다.
             @Override
             public Object resolve(EvaluationContext context, String beanName) throws AccessException {
                 return beanName.equals("person") ? person: nancy;
@@ -65,12 +66,15 @@ public class SpELTest {
         ctx.setRootObject(person);
         ctx.setVariable("horse", nancy);
 
+        // Root 객체 접근
         assertTrue(parser.parseExpression("over(170)").getValue(ctx,
                 Boolean.class));
 
+        // Variable 접근
         assertFalse(parser.parseExpression("#horse.over(170)").getValue(ctx,
                 Boolean.class));
 
+        // Bean 접근
         assertTrue(parser.parseExpression("@person.over(170)").getValue(ctx,
                 Boolean.class));
         assertFalse(parser.parseExpression("@nancy.over(170)").getValue(ctx,
