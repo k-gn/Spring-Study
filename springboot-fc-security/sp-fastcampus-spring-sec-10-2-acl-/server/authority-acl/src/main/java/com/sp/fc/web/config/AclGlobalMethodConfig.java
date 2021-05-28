@@ -29,6 +29,7 @@ import javax.sql.DataSource;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class AclGlobalMethodConfig extends GlobalMethodSecurityConfiguration {
 
+    // @ConfigurationProperties : *.properties , *.yml 파일에 있는 property를 자바 클래스에 값을 가져와서(바인딩) 사용
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource() {
