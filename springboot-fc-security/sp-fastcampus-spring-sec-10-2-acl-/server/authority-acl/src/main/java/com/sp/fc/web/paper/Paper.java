@@ -17,7 +17,7 @@ import java.util.List;
 public class Paper {
 
     @Id
-    private Long id;
+    private Long id; // acl 에서 @Id 값 이름은 id 로 통일
     private String title;
     private String tutorId;
 //    private List<String> studentIds;
