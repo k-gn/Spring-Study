@@ -20,7 +20,7 @@ import javax.persistence.*;
 // @Table 엔티티와 매핑할 테이블을 지정, 인덱스나 제약조건 등을 지정해줄 수 있다.
 //@Table(name = "user", indexes = { @Index(columnList = "name")}, uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
 @EntityListeners(value = { UserEntityListener.class })
-public class User extends BaseEntity implements Auditable {
+public class User extends BaseEntity {
 
     @Id
     // identity : mysql에서 일반적으로 많이 쓴다. (auto increment)
