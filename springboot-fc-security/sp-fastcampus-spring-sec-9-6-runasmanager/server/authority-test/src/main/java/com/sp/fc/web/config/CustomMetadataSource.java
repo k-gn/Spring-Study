@@ -53,6 +53,6 @@ public class CustomMetadataSource implements MethodSecurityMetadataSource {
         if (annotation != null) {
             return annotation;
         }
-        return annotation;
+        return null;
     }
 }
