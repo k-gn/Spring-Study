@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class PaperService implements InitializingBean {
+public class  PaperService implements InitializingBean {
 
     private HashMap<Long, Paper> paperDB = new HashMap<>();
 
