@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class CustomPermissionEvaluator implements PermissionEvaluator {
 
 //    @Autowired
-    @Lazy // 생성 시점을 늦추기
+    @Lazy
     private PaperService paperService;
 
     @Override
