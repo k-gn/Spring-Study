@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.6" />
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.16/6dc192c7f93ec1853f70d59d8a6dcf94eb42866/lombok-1.18.16.jar" />
+        </processorPath>
+        <module name="spring-security-study.server-login-session-management.test" />
+        <module name="spring-security-study.server-login-multi-chain.main" />
+        <module name="spring-security-study.server-login-userdetails.main" />
+        <module name="spring-security-study.web-user-admin.test" />
+        <module name="spring-security-study.server-basic-test.test" />
+        <module name="spring-security-study.server-login-rememberme.main" />
+        <module name="spring-security-study.server-login-basic.main" />
+        <module name="spring-security-study.server-basic-authentication-test.test" />
+        <module name="spring-security-study.server-login-rememberme.test" />
+        <module name="spring-security-study.comp-user-admin.test" />
+        <module name="spring-security-study.server-login-custom-filter.test" />
+        <module name="spring-security-study.server-authority-test.test" />
+        <module name="spring-security-study.comp-user-admin.main" />
+        <module name="spring-security-study.server-authority-acl.main" />
+        <module name="spring-security-study.web-user-admin.main" />
+        <module name="spring-security-study.test-web-util.main" />
+        <module name="spring-security-study.server-basic-authentication-test.main" />
+        <module name="spring-security-study.server-login-userdetails.test" />
+        <module name="spring-security-study.web-student-teacher.test" />
+        <module name="spring-security-study.server-basic-test.main" />
+        <module name="spring-security-study.web-student-teacher.main" />
+        <module name="spring-security-study.server-login-basic.test" />
+        <module name="spring-security-study.server-authority-acl.test" />
+        <module name="spring-security-study.server-login-session-management.main" />
+        <module name="spring-security-study.server-login-multi-chain.test" />
+        <module name="spring-security-study.test-web-util.test" />
+        <module name="spring-security-study.server-authority-test.main" />
+        <module name="spring-security-study.server-login-custom-filter.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="11" />
   </component>
 </project>
