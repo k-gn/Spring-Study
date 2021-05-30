@@ -1,8 +1,8 @@
 package com.fc.jpa.bookmanager.domain;
 import com.fc.jpa.bookmanager.domain.listener.Auditable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+
+import javax.persistence.*;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -16,7 +16,7 @@ import lombok.ToString;
 //@EntityListeners(value = AuditingEntityListener.class)
 public class Book extends BaseEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -26,6 +26,13 @@ public class Book extends BaseEntity {
     private Long authorId;
 
     private Long publisherId;
+
+    // JPA에서는 두 객체 연관관계 중 하나를 정해서 테이블의 외래키를 관리해야 하는데 이것을 연관관계의 주인이라고 한다.
+    // 주인이 아니면 mappedBy 속성을 사용해서 속성의 값으로 연관관계의 주인을 지정
+    // 연관관계의 주인은 외래 키가 있는 곳으로 설정
+    @OneToOne(mappedBy = "book") // mappedBy : 양방향 매핑일 때 사용, 반대쪽 매핑의 필드 이름을 값, 해당 테이블에서 연관키가 사라진다.
+    @ToString.Exclude // ToString 에서 제외 : 엔티티 릴레이션에서 순환참조를 없애기
+    private BookReviewInfo bookReviewInfo;
 
 //    @CreatedDate
 //    private LocalDateTime createdAt;

@@ -27,7 +27,7 @@ public class User extends BaseEntity {
     // sequence : oracle에서 일반적으로 많이 쓴다. (or postgre)
     // table : db 종류에 상관없이 별도에 table을 만들어 사용
     // auto : default (db에 적합한 값을 자동으로 설정)
-    @GeneratedValue // 자동 증가값
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // 자동 증가값
     private Long id;
 
     @NonNull
