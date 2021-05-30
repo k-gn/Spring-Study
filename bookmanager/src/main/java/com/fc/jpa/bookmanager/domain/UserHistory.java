@@ -1,10 +1,9 @@
 package com.fc.jpa.bookmanager.domain;
 
 import com.fc.jpa.bookmanager.domain.listener.Auditable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -25,6 +24,7 @@ public class UserHistory extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "user_id")
     private Long userId;
 
     private String name;

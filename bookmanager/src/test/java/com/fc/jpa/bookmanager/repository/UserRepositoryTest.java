@@ -6,6 +6,7 @@ import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatc
 
 import com.fc.jpa.bookmanager.domain.Gender;
 import com.fc.jpa.bookmanager.domain.User;
+import com.fc.jpa.bookmanager.domain.UserHistory;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Test;
@@ -233,5 +234,29 @@ class UserRepositoryTest {
         userRepository.save(user);
 
         userHistoryRepository.findAll().forEach(System.out::println);
+    }
+
+    @Test
+    void userRelationTest() {
+        User user = new User();
+        user.setName("david");
+        user.setEmail("david@fastcampus.com");
+        user.setGender(Gender.MALE);
+        userRepository.save(user); // insert
+
+        user.setName("daniel");
+        userRepository.save(user); // update
+
+        user.setEmail("daniel@fastcampus.com");
+        userRepository.save(user);
+
+//        userHistoryRepository.findAll().forEach(System.out::println);
+
+//        List<UserHistory> result = userHistoryRepository.findByUserId(
+//            userRepository.findByEmail("daniel@fastcampus.com").getId());
+
+        List<UserHistory> result = userRepository.findByEmail("daniel@fastcampus.com").getUserHistories();
+
+        result.forEach(System.out::println);
     }
 }

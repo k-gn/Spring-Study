@@ -1,6 +1,7 @@
 package com.fc.jpa.bookmanager.domain;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fc.jpa.bookmanager.domain.listener.Auditable;
@@ -39,6 +40,11 @@ public class User extends BaseEntity {
 
     @Enumerated(value = EnumType.STRING) // Enum 설정, 반드시 EnumType.String으로 쓰자.
     private Gender gender;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    // @JoinColumn : 조인할 컬럼 지정
+    @JoinColumn(name = "user_id", insertable = false, updatable = false) // User 에서 UserHistory 를 readOnly 로 설정
+    private List<UserHistory> userHistories = new ArrayList<>();
 
 //    @Column(name = "crtdat", nullable = false, updatable = false) // 컬럼 매핑
 //    @CreatedDate
