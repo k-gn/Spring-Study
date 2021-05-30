@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -38,6 +39,7 @@ public class Book extends BaseEntity {
     @ToString.Exclude // ToString 에서 제외 : 엔티티 릴레이션에서 순환참조를 없애기
     private BookReviewInfo bookReviewInfo;
 
+    // One 쪽의 PK 를 Many 쪽에서 FK 로 가지고 있다.
     @OneToMany
     @JoinColumn(name = "book_id")
     @ToString.Exclude
@@ -45,6 +47,16 @@ public class Book extends BaseEntity {
 
     @ManyToOne
     private Publisher publisher;
+
+    //    @ManyToMany
+    @OneToMany
+    @JoinColumn(name = "book_id")
+    @ToString.Exclude
+    private List<BookAndAuthor> bookAndAuthors = new ArrayList<>();
+
+    public void addBookAndAuthors(BookAndAuthor... bookAndAuthors) {
+        Collections.addAll(this.bookAndAuthors, bookAndAuthors);
+    }
 
 //    @CreatedDate
 //    private LocalDateTime createdAt;
