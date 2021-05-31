@@ -3,12 +3,8 @@ package com.fc.jpa.bookmanager.domain;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -26,6 +22,7 @@ import lombok.ToString;
 public class Author extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "aid")
     private Long id;
 
     private String name;
@@ -34,7 +31,7 @@ public class Author extends BaseEntity {
 
     //    @ManyToMany
     @OneToMany
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "aid")
     @ToString.Exclude
     private List<BookAndAuthor> bookAndAuthors = new ArrayList<>();
 

@@ -27,7 +27,7 @@ public class Book extends BaseEntity {
 
     private String category;
 
-    private Long authorId;
+//    private Long authorId;
 
 //    @Column(name = "publisher_id")
 //    private Long publisherId;

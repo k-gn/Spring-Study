@@ -22,7 +22,7 @@ public class Publisher extends BaseEntity {
 
     // 중간 테이블을 만들지 않기 위해 JoinColumn 을 해준다.
     @OneToMany
-    @JoinColumn(name = "publisher_id")
+    @JoinColumn(name = "publisher_id") // many 쪽에 name 이름의 FK 가 자동으로 생성된다.
     @ToString.Exclude
     private List<Book> books = new ArrayList<>();
 

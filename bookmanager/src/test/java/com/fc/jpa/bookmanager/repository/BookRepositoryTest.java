@@ -27,7 +27,7 @@ public class BookRepositoryTest {
         Book book = new Book();
         book.setName("Jpa 초격차 패키지");
 //        book.setPublisherId(1L);
-        book.setAuthorId(1L);
+//        book.setAuthorId(1L);
 
         bookRepository.save(book);
 
@@ -42,9 +42,9 @@ public class BookRepositoryTest {
 
         User user = userRepository.findByEmail("martin@fastcampus.com");
 
-        System.out.println("Review : " + user.getReviews());
-        System.out.println("Book : " + user.getReviews().get(0).getBook());
-        System.out.println("Publisher : " + user.getReviews().get(0).getBook().getPublisher());
+//        System.out.println("Review : " + user.getReviews());
+//        System.out.println("Book : " + user.getReviews().get(0).getBook());
+//        System.out.println("Publisher : " + user.getReviews().get(0).getBook().getPublisher());
     }
 
     private void givenBookAndReview() {
