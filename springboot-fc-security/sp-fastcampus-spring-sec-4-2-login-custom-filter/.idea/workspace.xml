@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc84945-c0da-483b-8f62-4b0193d80b51" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test/server/basic-authentication-test/src/main/java/com/sp/fc/web/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test/server/basic-authentication-test/src/main/java/com/sp/fc/web/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test/server/basic-authentication-test/src/test/java/com/sp/fc/web/BasicAuthenticationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test/server/basic-authentication-test/src/test/java/com/sp/fc/web/BasicAuthenticationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-4-mutli-chain-proxy/server/login-multi-chain/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-4-mutli-chain-proxy/server/login-multi-chain/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-4-mutli-chain-proxy/server/login-multi-chain/src/main/java/com/sp/fc/web/config/MobSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-4-mutli-chain-proxy/server/login-multi-chain/src/main/java/com/sp/fc/web/config/MobSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-4-mutli-chain-proxy/server/login-multi-chain/src/test/java/com/sp/fc/web/MultiChainProxyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-4-mutli-chain-proxy/server/login-multi-chain/src/test/java/com/sp/fc/web/MultiChainProxyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-6-2-user-details/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bookmanager/src/main/java/com/fc/jpa/bookmanager/domain/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bookmanager/src/main/java/com/fc/jpa/bookmanager/domain/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-4-mutli-chain-proxy/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-4-mutli-chain-proxy/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-6-2-user-details/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-6-2-user-details/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-8-2-session-management/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-8-2-session-management/.idea/gradle.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +43,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sp-fastcampus-spring-sec-8-2-session-management" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -91,6 +91,8 @@
       <workItem from="1621999005797" duration="488000" />
       <workItem from="1622008750578" duration="411000" />
       <workItem from="1622022109197" duration="86000" />
+      <workItem from="1623076040938" duration="471000" />
+      <workItem from="1623113734474" duration="26000" />
     </task>
     <servers />
   </component>

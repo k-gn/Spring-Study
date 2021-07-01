@@ -33,7 +33,7 @@ public class DecodeAop {
 
     @AfterReturning(value = "cut() && enableDecode()", returning = "returnObj")
     public void afterReturn(JoinPoint joinPoint, Object returnObj) {
-
+        System.out.println("returnObj : " + returnObj);
         if(returnObj instanceof User) {
             User user = User.class.cast(returnObj); // 형 변환
             String email = user.getEmail();

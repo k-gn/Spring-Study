@@ -5,6 +5,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
 public class MyEntityListener {
+
     @PrePersist
     public void prePersist(Object o) {
         if (o instanceof Auditable) {

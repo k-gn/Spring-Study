@@ -17,7 +17,7 @@ import java.util.List;
 @Data
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-//@EntityListeners(value = AuditingEntityListener.class)
+//@EntityListeners(value = AuditingEntityListener.class) // EntityListeners - JPA Entity에서 이벤트가 발생할 때마다 특정 로직을 실행
 public class Book extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -75,3 +75,9 @@ public class Book extends BaseEntity {
 //        this.updatedAt = LocalDateTime.now();
 //    }
 }
+
+// 백기선 문제 설명
+// JPA 에서 @OneToMany 애노테이션을 사용하면 mappedBy 속성을 지정해주게된다. 상대편의 어떤 엔티티에 의해 매핑될것인지를 명시해주는것이다.
+// 그리고 1:N 관계에서 연관관계의 주인은 N이 되게된다. 때문에 mappedBy 를 이용한 필드는 JPA 에서 read-only 로 이용되어 실제 insert 시에는 insert 되지않는다.
+// 객체관계에서는 양방향 참조를 위해서는 서로가 서로를 참조로 갖고있어야한다.
+// RDB 관계에서 외래키는 N 이 보유하게된다. 즉 bookStore 가 book 을 갖고있는게 아니라 book 이 bookStore 를 들고있어야한다.
