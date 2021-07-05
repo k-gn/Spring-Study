@@ -81,7 +81,7 @@ public class RestTemplateService {
         // 보낼 데이터
         UserRequest req = new UserRequest();
         req.setName("steve");
-        req.setAge(10);
+        req.setAge(10);-
 
         // add header
         RequestEntity<UserRequest> requestEntity = RequestEntity
