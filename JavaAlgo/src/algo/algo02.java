@@ -1,5 +1,6 @@
 package algo;
 
+// 이진 탐색
 public class algo02 {
     public static void main(String[] args) {
         System.out.println("hello");

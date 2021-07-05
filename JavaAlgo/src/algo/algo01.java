@@ -1,5 +1,6 @@
 package algo;
 
+// 최대값 최소값 구하기
 public class algo01 {
     public static void main(String[] args) {
         System.out.println("hello");
