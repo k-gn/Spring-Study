@@ -18,7 +18,7 @@ public class algo04 {
 
     public static void main(String[] args) {
 
-        int a = 1, b = 4, c = 8;
+        int a = 3, b = 4, c = 2;
         int result = mid(a, b, c);
         System.out.println("mid : " + result);
     }
