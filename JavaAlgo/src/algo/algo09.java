@@ -2,6 +2,7 @@ package algo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class algo09 {
 
@@ -30,6 +31,13 @@ public class algo09 {
         for(Integer num : arr) {
             System.out.println(num);
         }
+        System.out.println("=====================================");
+
+        int randNum = (int) (Math.random() * 10) + 1;
+        Random random = new Random();
+        int randNum2 = random.nextInt(10) + 1;
+        System.out.println("randNum : " + randNum);
+        System.out.println("randNum : " + randNum2);
     }
 
 }
