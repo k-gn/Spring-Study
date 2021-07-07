@@ -7,6 +7,8 @@ public class algo12 {
 
     public static void main(String[] args) throws IOException {
 
+        // 진수 변환
+
         int i = 127;
         int num = 8;
         char[] index = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};

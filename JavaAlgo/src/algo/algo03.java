@@ -9,6 +9,7 @@ public class algo03 {
 
         int i = 0, j = 0, key = 0;
 
+        // key 값을 기준으로 비교 (방향은 앞)
         for(i = 1; i < arr.length; i++) {
             key = arr[i];
             for(j = i - 1; j >= 0; j--) {

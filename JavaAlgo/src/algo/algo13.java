@@ -21,8 +21,11 @@ public class algo13 {
 //            System.out.println(n + " 은 소수가 아닙니다.");
 //        }
 
+        // 소수 구하기
+        
         int idx = 0;
         int[] prime = new int[500];
+        // 2, 3 은 당연한 소수
         prime[idx++] = 2;
         prime[idx++] = 3;
 

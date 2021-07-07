@@ -20,7 +20,7 @@ public class algo11 {
     }
 
     public static void rcopy(int[] a, int[] b) {
-        b = a.clone();
+        b = a.clone(); // 배열 복사
         for(int i=0; i<b.length/2; i++) {
             int temp = b[i];
             b[i] = b[b.length - 1 - i];
@@ -29,6 +29,7 @@ public class algo11 {
         System.out.println(Arrays.toString(b));
     }
 
+    // 배열이 같은지 여부 확인
     public static void main(String[] args) throws IOException {
 
 //       BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));

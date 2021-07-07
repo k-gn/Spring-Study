@@ -7,6 +7,8 @@ public class algo06 {
 
         int n = 123;
         int count = 0;
+        int length = (int)(Math.log10(n)+1);
+        System.out.println("자리수 : " + length);
 
         while(n != 0) {
             n = n / 10;
@@ -14,6 +16,7 @@ public class algo06 {
             count++;
         }
         System.out.println("자리수 : " + count);
+
 
     }
 
