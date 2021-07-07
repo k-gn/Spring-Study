@@ -17,7 +17,7 @@ public class algo12 {
             i = i / num;
             arr[digit++] = index[temp];
         }
-        
+
         for(int j=0; j<digit; j++) {
             char temp = arr[j];
             arr[j] = arr[arr.length - 1 - j];
