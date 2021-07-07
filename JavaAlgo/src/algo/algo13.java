@@ -22,7 +22,7 @@ public class algo13 {
 //        }
 
         // 소수 구하기
-        
+
         int idx = 0;
         int[] prime = new int[500];
         // 2, 3 은 당연한 소수
