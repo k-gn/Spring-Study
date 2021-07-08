@@ -1,5 +1,6 @@
 package clazz;
 
+// n일뒤 or n일앞 날짜 구하기
 public class YMD {
 
     private int y = 2021;
