@@ -31,32 +31,108 @@ public class MyLinkedList {
         return newNode;
     }
 
-    public MyListNode insertElement(int position, String data ) {
+    public MyListNode insertElement(int position, String data) {
 
-        return null;
+        MyListNode temp = head;
+        MyListNode newNode = new MyListNode(data);
+
+        if(position < 0 || position > count ){
+            System.out.println("추가 할 위치 오류 입니다. 현재 리스트의 개수는 " + count +"개 입니다.");
+            return null;
+        }
+
+        if(position == 0) {
+            newNode.next = head;
+            head = newNode;
+        }else {
+            MyListNode preNode = null;
+            for(int i=0; i<position; i++) {
+                preNode = temp; // 삽입할 자리 이전 값
+                temp = temp.next; // 삽입할 자리 값 (position 자리값)
+            }
+
+            newNode.next = temp;
+            preNode.next = newNode;
+        }
+        count++;
+
+        return newNode;
     }
 
     public MyListNode removeElement(int position) {
 
-        return null;
+        MyListNode temp = head;
+
+        // 1 -> 2 -> 3 -> 4
+        if(position >= count){
+            System.out.println("삭제 할 위치 오류입니다. 현재 리스트의 개수는 " + count +"개 입니다.");
+            return null;
+        }
+
+        if(position == 0){  //맨 앞을 삭제하는
+            head = temp.next;
+        }else {
+            MyListNode preNode = null;
+            for(int i=0; i<position; i++) {
+                preNode = temp; // 지울 값 바로 이전 값
+                temp = temp.next; // 이값이 지우고자 하는 값 (position 자리 값)
+            }
+            preNode.next = temp.next;
+        }
+        count--;
+
+        return temp;
     }
 
     public String getElement(int position) {
 
-        return null;
+        MyListNode tempNode = head;
+
+        if(position >= count ){
+            System.out.println("검색 위치 오류 입니다. 현재 리스트의 개수는 " + count +"개 입니다.");
+            return new String("error");
+        }
+
+        if(position == 0){  //맨 인 경우
+            return head.getData();
+        }else {
+            for(int i=0; i<position; i++) {
+                tempNode = tempNode.next;
+            }
+        }
+
+
+        return tempNode.getData();
     }
 
     public MyListNode getNode(int position) {
 
-        return null;
+        MyListNode tempNode = head;
+
+        if(position >= count ){
+            System.out.println("검색 위치 오류 입니다. 현재 리스트의 개수는 " + count +"개 입니다.");
+            return null;
+        }
+
+        if(position == 0){  //맨 인 경우
+
+            return head;
+        }
+
+        for(int i=0; i<position; i++){
+            tempNode = tempNode.next;
+
+        }
+
+        return tempNode;
     }
 
     public void removeAll() {
-
+        head = null;
+        count = 0;
     }
 
     public int getSize() {
-
         return count;
     }
 
