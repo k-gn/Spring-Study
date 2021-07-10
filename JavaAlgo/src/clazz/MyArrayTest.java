@@ -19,11 +19,14 @@ public class MyArrayTest {
         array.addElement(70);
         array.printAll();
         System.out.println("===============");
+        array.removeElement(3);
+        array.printAll();
+        System.out.println("===============");
         array.removeElement(1);
         array.printAll();
 
         System.out.println("===============");
-        System.out.println(array.getElement(2));
+        System.out.println(array.getElement(0));
 
     }
 }

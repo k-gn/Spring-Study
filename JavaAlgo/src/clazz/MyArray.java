@@ -76,7 +76,9 @@ public class MyArray {
 
         ret = intArr[position];
 
-        for (int i=position; i<count; i++) {
+        System.out.println("position : " + position);
+        System.out.println("count : " + count);
+        for (int i=position; i<count - 1; i++) {
             intArr[i] = intArr[i + 1];
         }
 
