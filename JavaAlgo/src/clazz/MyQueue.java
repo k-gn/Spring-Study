@@ -17,7 +17,6 @@ public class MyQueue extends MyLinkedList implements IQueue {
     MyListNode front;
     MyListNode rear;
 
-
     public MyQueue() {
         front = null;
         rear = null;
