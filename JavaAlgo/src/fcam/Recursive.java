@@ -3,7 +3,7 @@ package fcam;
 import java.util.Stack;
 
 // 재귀
-public class recursive {
+public class Recursive {
 
     public static void recursiveDef(int data) {
         if(data < 0) {
