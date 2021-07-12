@@ -19,7 +19,7 @@ public class MaxHeap {
 
         int  p = heap.size()-1; //새로 넣은 노드의 인덱스 위치 정보
         //루트까지 자식이 더 크면 교환
-        while(p>1 && heap.get(p)> heap.get(p/2)) {
+        while(p>1 && heap.get(p) > heap.get(p/2)) {
             int tmp = heap.get(p/2);
             heap.set(p/2, heap.get(p));
             heap.set(p, tmp);
