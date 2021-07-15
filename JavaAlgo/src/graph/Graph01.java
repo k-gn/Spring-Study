@@ -1,80 +1,102 @@
 package graph;
 
+import org.w3c.dom.Node;
+
+import javax.swing.tree.TreeNode;
 import java.util.*;
+
+class Nodes {
+    public int val;
+    LinkedList<Nodes> adjacent;
+    boolean marked;
+    public static int num = 0;
+
+    Nodes() {
+        this.val = ++num;
+        this.marked = false;
+        adjacent = new LinkedList<Nodes>();
+    }
+}
 
 public class Graph01 {
 
-    static class TreeNode {
-        public int val;
-        TreeNode left;
-        TreeNode right;
+    public List<Nodes> nodes;
+    Graph01(){
+        nodes = new ArrayList<>();
+    }
 
-        TreeNode(int val) {
-            this.val = val;
+    //두 노드의 관계를 저장
+    void addEdge(int i1, int i2){
+        Nodes n1 = nodes.get(i1);
+        Nodes n2 = nodes.get(i2);
+
+        //상대방이 있는지 확인하고 없으면 추가
+        if(!n1.adjacent.contains(n2)){
+            n1.adjacent.add(n2);
+        }
+        if(!n2.adjacent.contains(n1)){
+            n2.adjacent.add(n1);
         }
     }
 
-    public static int bfs(TreeNode root) {
-        if(root == null) return 0;
-        int count = 0;
-        Queue<TreeNode> queue = new LinkedList<>();
+    public List<Integer> bfs(int index) {
+        if(nodes.get(index) == null) return null;
+        Nodes root = nodes.get(index);
+
+        Queue<Nodes> queue = new LinkedList<>();
+        List<Integer> visited = new ArrayList<>();
         queue.offer(root);
-        while(!queue.isEmpty()) {
-            int size = queue.size();
-            for(int i = 0; i<size; i++) {
-                TreeNode node = queue.poll();
-                if (node.left != null) {
-                    queue.offer(node.left);
-                }
-                if (node.right != null) {
-                    queue.offer(node.right);
+        root.marked = true;
+        visited.add(root.val);
+
+        while(!queue.isEmpty()){
+            Nodes r = queue.poll();
+            for(Nodes n : r.adjacent){
+                if(n.marked == false){
+                    n.marked = true;
+                    queue.offer(n);
+                    visited.add(n.val);
                 }
             }
-            count++;
         }
-        return count;
+        return visited;
     }
 
-    public static int dfs(TreeNode root) {
-        if(root == null) return 0;
-        Stack<TreeNode> stack = new Stack<>();
-        Stack<Integer> countStack = new Stack<>();
-        stack.push(root);
-        countStack.push(1);
+    public void dfsR(int index){
+        Nodes r = nodes.get(index);
+        dfsR(r);
+    }
 
-        int max = 0;
-        while(!stack.isEmpty()) {
-            TreeNode treeNode = stack.pop();
-            int count = countStack.pop();
-            max = Math.max(max, count);
-
-            if (treeNode.left != null) {
-                stack.push(treeNode.left);
-                countStack.push(count + 1);
-            }
-            if (treeNode.right != null) {
-                stack.push(treeNode.right);
-                countStack.push(count + 1);
+    public void dfsR(Nodes node) {
+        if(node == null) return;
+        node.marked = true;
+        System.out.print(node.val + " ");
+        for(Nodes n : node.adjacent){
+            if(n.marked == false){
+                dfsR(n);
             }
         }
-        return max;
     }
 
     public static void main(String[] args) {
 
-        TreeNode root = new TreeNode(10);
-        root.left = new TreeNode(9);
-        root.left.left = new TreeNode(7);
-        root.left.right = new TreeNode(8);
-        root.left.left.left = new TreeNode(5);
-        root.left.left.left.left = new TreeNode(2);
-        root.left.left.right = new TreeNode(6);
-        root.right = new TreeNode(11);
-        root.right.left = new TreeNode(12);
-        root.right.right = new TreeNode(13);
+        Graph01 g = new Graph01();
 
+        // 1, 2, 3, 4, 5, 6, 7, 8, 9
+        for(int i=0; i<9; i++) {
+            g.nodes.add(new Nodes());
+        }
 
-        System.out.println(dfs(root));
-        System.out.println(bfs(root));
+        g.addEdge(0,1);
+        g.addEdge(0,2);
+        g.addEdge(1,3);
+        g.addEdge(1,4);
+        g.addEdge(2,5);
+        g.addEdge(2,6);
+        g.addEdge(3,7);
+        g.addEdge(3,8);
+
+//        System.out.println(g.bfs(0));
+        g.dfsR(0);
     }
 }
