@@ -8,8 +8,8 @@ public class 다익스트라 {
 
     static class Node implements Comparable<Node> {
 
-        private int index;
-        private int distance;
+        private int index; // 도착지점
+        private int distance; // 도착지점 비용
 
         public Node(int index, int distance) {
             this.index = index;
