@@ -37,23 +37,31 @@ public class Kruskal {
     public static ArrayList<Edge> edgeList;
 
     public static void union(int x, int y) {
+        System.out.println("union ==========================");
         x = find(x);
         y = find(y);
         if(x != y)
-            System.out.println("X : " + x);
+            System.out.println("not same!");
+            System.out.println("x : " + x);
             parent[y] = x;
     }
 
     public static int find(int x) {
+        System.out.println("find =================================");
+        System.out.println("x : " + x);
         if(parent[x] == x) {
+            System.out.println("return x!");
             return x;
         }
-        return parent[x] = find(parent[x]);
+        System.out.println("return parent[x] = find(parent[x])");
+        return parent[x] = find(parent[x]); // 노드의 부모값을 찾아 올라감
     }
     public static boolean isSameParent(int x, int y) {
+        System.out.println("isSameParent ==========================");
+        System.out.println("x : " + x + ", y : " + y);
         x = find(x);
         y = find(y);
-        System.out.println("x : " + x + ", y : " + y);
+        System.out.println("f-x : " + x + ", f-y : " + y);
         if(x == y) return true;
         else return false;
     }
@@ -86,8 +94,8 @@ public class Kruskal {
                 sum += edge.cost;
                 union(edge.v1, edge.v2);
             }
+            System.out.println(Arrays.toString(parent));
         }
-        System.out.println(Arrays.toString(parent));
         System.out.println(sum);
     }
 }
