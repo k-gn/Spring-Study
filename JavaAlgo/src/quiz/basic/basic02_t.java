@@ -4,8 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class basic02 {
+public class basic02_t {
 
+    // 최대 n값의 3장의 카드를 고르는 블랙잭
+    // n(n-1)(n-2) / 3!
     public static void main(String[] args) throws IOException {
 
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
@@ -31,12 +33,16 @@ public class basic02 {
 
         int result = 0;
 
-        for(int i=0; i<cardCount-2; i++) {
+        for(int i=0; i<arr.length; i++) {
 
-            for(int j=1; j<cardCount - 1; j++) {
-                int max = arr[i] + arr[j] + arr[j+1];
-                if(max <= cardNum && max > result) {
-                    result = max;
+            for(int j=i+1; j<arr.length; j++) {
+
+                for(int k=j+1; k<arr.length; k++) {
+
+                    int sum = arr[i] + arr[j] + arr[k];
+                    if(sum <= cardNum && sum > result) {
+                        result = sum;
+                    }
                 }
             }
 
