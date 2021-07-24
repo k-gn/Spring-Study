@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Comparator;
 
-// 백준 행복
+// 정렬
 public class array07 {
 
     public static void main(String[] args) throws IOException {
@@ -15,6 +15,17 @@ public class array07 {
 
         int n = Integer.parseInt(br.readLine());
 
+//        int[] arr = new int[10001];
+//
+//        for(int i=0; i<n; i++) {
+//            arr[i] = Integer.parseInt(br.readLine());
+//        }
+//
+//        Arrays.sort(arr);
+//
+//        for(int i=0; i<n; i++) {
+//            System.out.println(arr[i]);
+//        }
     }
 
 }

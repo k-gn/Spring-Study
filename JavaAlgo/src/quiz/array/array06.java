@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-// 백준 행복
+// 좌표 정렬
 public class array06 {
 
     public static void main(String[] args) throws IOException {

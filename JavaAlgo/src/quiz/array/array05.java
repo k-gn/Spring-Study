@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
-// 백준 행복
+// 나이 순 정렬
 public class array05 {
 
     public static void main(String[] args) throws IOException {
