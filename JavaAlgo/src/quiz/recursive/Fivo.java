@@ -23,6 +23,18 @@ public class Fivo {
 
         int n = Integer.parseInt(br.readLine());
 
-        System.out.println(fivo(n));
+//        System.out.println(fivo(n));
+
+        int a = 0;
+        int b = 1;
+
+        // 재귀가 아닌 반복문으로 하면 시간복잡도 면에서 더 효과적
+        while(n > 0) {
+            int temp = a;
+            a = b;
+            b = temp + a;
+            n--;
+        }
+        System.out.println(a);
     }
 }
