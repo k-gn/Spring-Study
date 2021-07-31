@@ -14,6 +14,7 @@ public class Main {
 
     public static void main(String[] args) throws JsonProcessingException {
 
+        // objectmapper를 통해 json 노드에 직접 접근하여 다룰 수 있다.
         ObjectMapper objectMapper = new ObjectMapper();
 
         User user = new User();
