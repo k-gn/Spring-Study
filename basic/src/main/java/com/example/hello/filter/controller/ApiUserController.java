@@ -14,7 +14,7 @@ public class ApiUserController {
 
     @PostMapping("")
     public User user(@RequestBody User user) {
-        log.info("user : {}", user);
+        log.info("user : {}", user); // {} 에 , 뒤에 값이 차례대로 들어간다.
         return user;
     }
 
