@@ -47,6 +47,13 @@ public class ServerApiController {
         return result.getBody();
     }
 
+    // @RequestParam을 생략하면 내부적으로  String이나 Long 같은 타입은 @ReuqestParam으로 취급하고 그 이외에 파라미터는 @ModelAttribute로 취급
+    // body에 담아서 오는 경우 @RequestBody 사용
+    // @RequestParam은 1개의 HTTP 요청 파라미터를 받기 위해서 사용
+    // @ModelAttribute는 클라이언트가 전송하는 multipart/form-data 형태의 HTTP Body 내용과 HTTP 파라미터들을 Setter를 통해 1대1로 객체에 바인딩
+    // @RequestBody는 클라이언트가 전송하는 Json(application/json) 형태의 HTTP Body 내용을 Java Object로 변환시켜주는 역할
+    // 공통적으로 받을 타입과 이름이 같아야함
+
     @GetMapping("/hello")
     public User hello(String name, int age) {
         User user = new User();
@@ -60,7 +67,7 @@ public class ServerApiController {
                      @RequestBody Req<User> user,
                      @PathVariable int userId,
                      @PathVariable String userName,
-                     @RequestHeader("x-authorization") String authorization,
+                     @RequestHeader("x-authorization") String authorization, // HTTP 요청 헤더 값을 컨트롤러 메서드의 파라미터로 전달
                      @RequestHeader("custom-header") String customHeader) {
 
 

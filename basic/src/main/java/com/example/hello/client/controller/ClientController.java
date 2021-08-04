@@ -16,6 +16,11 @@ public class ClientController {
     @Autowired
     private RestTemplateService restTemplateService;
 
+    @GetMapping("/hello")
+    public UserResponse hello() {
+        return restTemplateService.hello();
+    }
+
     @GetMapping("")
     public Req<UserResponse> getHello() {
 //        return restTemplateService.hello();
