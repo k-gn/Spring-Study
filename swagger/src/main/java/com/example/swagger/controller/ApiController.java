@@ -5,6 +5,7 @@ import com.example.swagger.dto.UserRes;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.*;
 
+// localhost:8080/swagger-ui/
 @Api(tags = {"API 정보를 제공하는 Controller"})
 @RestController
 @RequestMapping("/api")

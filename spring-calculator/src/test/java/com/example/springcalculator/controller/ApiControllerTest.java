@@ -21,7 +21,10 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 
-// Web Test
+// Web Test 어노테이션 (MVC를 위한 테스트, 컨트롤러가 예상대로 동작하는지 테스트하는데 사용)
+// @SpringBootTest 을 같이 사용할 수 없다.
+// 웹에서 테스트하기 힘든 컨트롤러를 테스트하는 데 적합.
+// 웹상에서 요청과 응답에 대해 테스트할 수 있음.
 // Test 할 controller 지정 가능 -> 필요한 것들만 loading 시킨다. (자원 낭비 방지)
 @WebMvcTest(ApiController.class)
 @AutoConfigureWebMvc // MVC와 관련된 Bean을 올린다
@@ -78,6 +81,7 @@ public class ApiControllerTest {
     }
 }
 // jacoco 로 테스트 커버리지 확인 하기
+// 내가 만든 코드가 어디까지 커버하고 있는지 확인 가능
 // gradle 에 id 'jacoco' 추가
 // Task -> verification 에서 test 실행 후 jacoco~ 실행
 // build 폴더에 reports 에서 jacoco report 확인 가능(index.html)
