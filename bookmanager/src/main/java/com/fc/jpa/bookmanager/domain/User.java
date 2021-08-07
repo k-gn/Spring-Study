@@ -18,13 +18,13 @@ import javax.persistence.*;
 //@ToString(callSuper = true)
 //@EqualsAndHashCode(callSuper = true)
 @Builder // 빌더 형식으로 객체를 생성하고 필드값을 주입해준다.
-@Entity // 자바 객체를 엔티티로 선언
+@Entity // 자바 객체를 엔티티로 선언, PK가 반드시 필요하다.
 // @Table 엔티티와 매핑할 테이블을 지정, 인덱스나 제약조건 등을 지정해줄 수 있다.
 //@Table(name = "user", indexes = { @Index(columnList = "name")}, uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
 @EntityListeners(value = { UserEntityListener.class })
 public class User extends BaseEntity {
 
-    @Id
+    @Id // PK 설정
     // identity : mysql에서 일반적으로 많이 쓴다. (auto increment)
     // sequence : oracle에서 일반적으로 많이 쓴다. (or postgre)
     // table : db 종류에 상관없이 별도에 table을 만들어 사용

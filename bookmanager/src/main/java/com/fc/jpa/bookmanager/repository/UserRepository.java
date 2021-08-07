@@ -13,7 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.Query;
 
-// extends JpaRepository<User, Long> 를 상속만 받아도 jpa 의 다양한 기능을 사용할 수 있다.
+// extends JpaRepository<User, Long> 를 상속만 받아도 jpa 의 쉽게 다양한 기능을 사용할 수 있다.
 // 제네릭 : Entity, PK
 public interface UserRepository extends JpaRepository<User, Long> {
 
