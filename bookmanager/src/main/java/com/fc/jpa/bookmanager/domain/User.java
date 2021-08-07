@@ -15,8 +15,8 @@ import javax.persistence.*;
 @RequiredArgsConstructor // NonNull or final, 다른 consturctor 어노테이션 존재 시 @Data 있어도 작성해줘야함
 @Data
 // callSuper: 자동 생성 시 부모 클래스의 필드까지 감안할지 안 할지에 대해서 설정
-//@ToString(callSuper = true)
-//@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @Builder // 빌더 형식으로 객체를 생성하고 필드값을 주입해준다.
 @Entity // 자바 객체를 엔티티로 선언, PK가 반드시 필요하다.
 // @Table 엔티티와 매핑할 테이블을 지정, 인덱스나 제약조건 등을 지정해줄 수 있다.

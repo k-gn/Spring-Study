@@ -9,6 +9,7 @@ spring:
       hibernate:
         format_sql: true # 예쁘게 보기 위한 포매팅 설정
 
+
 server:
   port: 8070
 

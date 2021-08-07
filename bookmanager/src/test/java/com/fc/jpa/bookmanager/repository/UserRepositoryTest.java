@@ -15,11 +15,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.*;
 import java.time.LocalDateTime;
 import org.assertj.core.util.Lists;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Order;
+import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest // spring context loading
 class UserRepositoryTest {
@@ -29,28 +32,30 @@ class UserRepositoryTest {
     private UserHistoryRepository userHistoryRepository;
 
     @Test
+    @Transactional // lazy 로딩 때 세션 유지 + test code에서 사용 시 자동으로 rollback
     void crud() { // create, read, update, delete
 //        userRepository.save(new User());
 
 //        List<User> users = userRepository.findAll(Sort.by(Sort.Direction.DESC, "name"));
 //        List<User> users = userRepository.findAllById(Lists.newArrayList(1L, 3L, 5L));
 
-//        User user1 = new User("jack", "jack@jack.com");
-//        User user2 = new User("steve", "steve@steve.com");
-//        User user3 = new User("john", "john@john.com");
-//        userRepository.saveAll(Lists.newArrayList(user1, user2, user3));
+        User user1 = new User("jack", "jack@jack.com");
+        User user2 = new User("steve", "steve@steve.com");
+        User user3 = new User("john", "john@john.com");
+        userRepository.saveAll(Lists.newArrayList(user1, user2, user3));
 
-//        List<User> users = userRepository.findAll();
-//        users.forEach(System.out::println);
+        List<User> users = userRepository.findAll();
+        users.forEach(System.out::println);
+        System.out.println("=========================================");
 
-//        User user4 = userRepository.getOne(1L);
-//        System.out.println(user);
+        User user4 = userRepository.getOne(1L); // getOne : lazy
+        System.out.println(user4);
 
-//        User user = userRepository.findById(1L).orElse(null);
-//        System.out.println(user);
+        User user = userRepository.findById(4L).orElse(null); // findById : eager
+        System.out.println(user);
 
 //        userRepository.save(new User("new martin", "newmartin@nm.com"));
-//        userRepository.flush(); // db 반영시점을 조절
+//        userRepository.flush(); // db 반영시점을 조절 (영속성 컨텍스트의 변경 내용을 DB 에 반영)
 //        userRepository.findAll().forEach(System.out::println);
 
 //        long count = userRepository.count();
@@ -58,7 +63,6 @@ class UserRepositoryTest {
 //        boolean exists = userRepository.existsById(1L);
 //        System.out.println(exists);
 
-//        userRepository.delete(userRepository.findById(1L).orElseThrow(RuntimeException::new));
 //        userRepository.delete(userRepository.findById(1L).orElseThrow(RuntimeException::new));
 //        userRepository.deleteById(1L);
 //        userRepository.deleteAll(userRepository.findAllById(Lists.newArrayList(1L, 3L)));
