@@ -16,6 +16,7 @@ class UserTest {
 
         User user2 = new User("martin", "martin@fastcampus.com");
 
+        // builder 형식
         User user3 = User.builder()
                 .name("martin")
                 .email("martin@fastcampus.com")
