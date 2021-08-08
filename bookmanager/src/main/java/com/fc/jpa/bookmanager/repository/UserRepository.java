@@ -20,6 +20,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // 쿼리 메소드
     // 네이밍 규칙에 맞게 작성
     // 리턴 타입은 개발자가 정의해준대로 자동으로 변환하여 반환해준다.
+    // 쿼리 메소드는 꼭 테스트를 해보자!
     /*
 
         조회 : find...By
@@ -32,7 +33,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
         DISTINCT : findDistinct
 
-        LIMIT : findFirst3, findFirst, findTop
+        LIMIT : findFirst3, findFirst1, findTop1
 
     */
 //    List<User> findByName(String name);

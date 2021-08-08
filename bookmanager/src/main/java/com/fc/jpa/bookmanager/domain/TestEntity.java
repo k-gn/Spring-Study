@@ -3,10 +3,9 @@ package com.fc.jpa.bookmanager.domain;
 import com.fc.jpa.bookmanager.domain.listener.TestListener;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  # h2 database
@@ -29,4 +28,8 @@ public class TestEntity extends TestListener {
 
     private String name;
 
+    @OneToMany(mappedBy = "testEntity")
+//    @JoinColumn(name = "test_id")
+//    @ToString.Exclude
+    private List<TestObj> testList = new ArrayList<>();;
 }

@@ -71,7 +71,7 @@ class UserRepositoryTest {
 //        userRepository.deleteInBatch(userRepository.findAllById(Lists.newArrayList(1L, 3L)));
 //        userRepository.deleteAllInBatch();
 
-        // 페이징
+        // 페이징 처리
 //        Page<User> users = userRepository.findAll(PageRequest.of(1, 3));
 //        System.out.println(users);
 //        System.out.println(users.getTotalElements()); // 요소의 총 개수
