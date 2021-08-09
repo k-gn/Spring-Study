@@ -94,11 +94,12 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // is not null
     List<User> findByIdIsNotNull();
 
-    // NotEmpty : collection properties 에 사용가능 (잘 안쓴다.)
+    // NotEmpty : collection properties 에 사용가능, exists 문으로 검색 (잘 안쓴다.)
 //    List<User> findByAddressIsNotEmpty();   // name is not null and name != '' 의미가 아니다.
+    // ...True, ...False
 
     // in
-    List<User> findByNameIn(List<String> names);
+    List<User> findByNameIn(List<String> names); // 일반적으로 다른 쿼리의 결과값을 받아 in 절을 처리하는데 쓴다.
 
     // like
     List<User> findByNameStartingWith(String name);
@@ -122,7 +123,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Page<User> findByName(String name, Pageable pageable);
 
     // 네이티브 쿼리
-    // 해당 쿼리값이 map에 저장된다. (리턴이 가능하면 어떤 타입이든 반환타입이 될 수 있다.)
+    // 컬럼명이 key값 해당 쿼리값이 value에 저장된다. (리턴이 가능하면 어떤 타입이든 반환타입이 될 수 있다.)
     @Query(value = "select * from user limit 1;", nativeQuery = true)
     Map<String, Object> findRawRecord();
 }

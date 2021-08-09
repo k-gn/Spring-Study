@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BeanUtils implements ApplicationContextAware {
+public class BeanUtils implements ApplicationContextAware { // 스프링 컨텍스트에 직접 접근하기 위한 유틸 클래스
     private static ApplicationContext applicationContext;
 
     @Override

@@ -10,16 +10,18 @@ import javax.persistence.PostUpdate;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
-// 리스너 클래스는 자동 주입을 할 수 없다.
+
 public class UserEntityListener {
-//    @PrePersist
-//    @PreUpdate
-    @PostPersist
-    @PostUpdate
-    public void prePersistAndPreUpdate(Object o) {
-        UserHistoryRepository userHistoryRepository = BeanUtils.getBean(UserHistoryRepository.class);
+    // @PostLoad : select 이후 실행
+    @PrePersist
+    @PreUpdate
+//    @PostPersist
+//    @PostUpdate
+    public void prePersistAndPreUpdate(Object o) { // 감지된 오브젝트를 받음
+        UserHistoryRepository userHistoryRepository = BeanUtils.getBean(UserHistoryRepository.class); // 리스너 클래스는 자동 주입을 할 수 없어서 직접 불러와야함
 
         User user = (User) o;
+        System.out.println("user : " + user);
 
         UserHistory userHistory = new UserHistory();
 //        userHistory.setUserId(user.getId());

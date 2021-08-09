@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+// ERD 로 그려보면서 먼저 테이블간의 연관관계 설계를 하면 좋다.
+
 @Entity
 @NoArgsConstructor
 @Data

@@ -31,6 +31,7 @@ class BookReviewInfoRepositoryTest {
 
     @Test
     void crudTest2() {
+
         givenBookReviewInfo();
 
         Book result = bookReviewInfoRepository
@@ -65,6 +66,6 @@ class BookReviewInfoRepositoryTest {
 
         bookReviewInfoRepository.save(bookReviewInfo);
 
-        System.out.println(">>> " + bookReviewInfoRepository.findAll());
+//        System.out.println(">>> " + bookReviewInfoRepository.findAll());
     }
 }
