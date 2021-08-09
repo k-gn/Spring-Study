@@ -47,6 +47,7 @@ public class Book extends BaseEntity {
     @ToString.Exclude
     private List<Review> reviews = new ArrayList<>();
 
+    // 보통 manytoone 쪽에 joincolumn 쓰고 onetomany 쪽에 mappedby 쓰는 것 같다.. (mappedby 도 중간테이블 안만들어줌)
     @ManyToOne
     private Publisher publisher;
 

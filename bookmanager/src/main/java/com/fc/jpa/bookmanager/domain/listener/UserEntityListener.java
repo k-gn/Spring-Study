@@ -27,7 +27,7 @@ public class UserEntityListener {
 //        userHistory.setUserId(user.getId());
         userHistory.setName(user.getName());
         userHistory.setEmail(user.getEmail());
-        userHistory.setUser(user);
+        userHistory.setUser(user); // 연관관계는 참조하고 있어야 동작된다.
 
         userHistoryRepository.save(userHistory);
     }

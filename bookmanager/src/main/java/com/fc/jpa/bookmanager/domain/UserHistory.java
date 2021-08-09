@@ -24,14 +24,14 @@ public class UserHistory extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @Column(name = "user_id", insertable = false, updatable = false)
+//    @Column(name = "user_id", insertable = false, updatable = false), onetomany 쪽에서 지정한 joincolumn 명과 같아야함
 //    private Long userId;
 
     private String name;
 
     private String email;
 
-    @ManyToOne
+    @ManyToOne // many 쪽에 자동으로 fk를 만들어준다.
     @ToString.Exclude
     private User user;
 

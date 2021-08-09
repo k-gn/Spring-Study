@@ -17,6 +17,8 @@ class TestServiceTest {
     @Autowired
     private TestRepository2 testRepository2;
 
+    // 영속성 컨텍스트에서 같은 트랜잭션 내에서의 작업은 cache 가 존재하기 때문에 이미 가지고 있는 데이터는
+    // 다시 select 를 안쓰고 cache 에서 데이터를 가져온다.
     @Test
     public void test() {
         TestEntity testEntity = new TestEntity();
@@ -31,13 +33,8 @@ class TestServiceTest {
         test2.setTestEntity(test);
         test.getTestList().add(test2);
 
-        System.out.println("TestEntity : " + test);
-//        System.out.println("TestEntity.getTestList : " + test.getTestList());
-
         TestObj testObj1 = testRepository2.save(test1);
-        System.out.println("testObj1 : " + testObj1);
         TestObj testObj2 = testRepository2.save(test2);
-        System.out.println("testObj2 : " + testObj2);
 
         testService.find(1L);
     }
