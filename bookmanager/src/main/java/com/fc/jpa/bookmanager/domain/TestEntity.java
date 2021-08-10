@@ -28,7 +28,7 @@ public class TestEntity extends TestListener {
 
     private String name;
 
-    @OneToMany(mappedBy = "testEntity", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "testEntity")
 //    @JoinColumn(name = "test_id")
 //    @ToString.Exclude
     private List<TestObj> testList = new ArrayList<>();;

@@ -5,7 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootTest
-@EnableJpaAuditing
+//@EnableJpaAuditing
 class BookmanagerApplicationTests {
 
     @Test

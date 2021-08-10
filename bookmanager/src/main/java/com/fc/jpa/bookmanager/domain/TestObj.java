@@ -17,7 +17,7 @@ public class TestObj extends TestListener {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "test_id")
     @ToString.Exclude
     private TestEntity testEntity;

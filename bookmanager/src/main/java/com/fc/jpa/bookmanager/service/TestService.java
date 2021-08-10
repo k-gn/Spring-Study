@@ -23,4 +23,9 @@ public class TestService {
         testEntity.getTestList().forEach(System.out::println); // 준영속에서 찾으려 해서 no Session
         return testEntity;
     }
+
+    @Transactional
+    public void findall() {
+        System.out.println(testRepository.findAll());
+    }
 }

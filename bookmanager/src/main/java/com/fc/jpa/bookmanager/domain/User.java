@@ -59,7 +59,7 @@ public class User extends BaseEntity {
     @OneToMany(fetch = FetchType.EAGER)
     // @JoinColumn : 조인할 컬럼 지정, OneToMany 시 필수 (중간 연결테이블을 만들지 않음)
     @JoinColumn(name = "user_id", insertable = false, updatable = false) // User 에서 UserHistory 를 히스토리 값 특성상 readOnly 로 설정
-    @ToString.Exclude
+//    @ToString.Exclude
     private List<UserHistory> userHistories = new ArrayList<>();
 
     @OneToMany // 사실 일대다 양방향 매핑은 존재하지 않음

@@ -5,6 +5,7 @@ import com.fc.jpa.bookmanager.domain.BookReviewInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,7 +21,8 @@ class BookReviewInfoRepositoryTest {
     @Test
     void crudTest() {
         BookReviewInfo bookReviewInfo = new BookReviewInfo();
-//        bookReviewInfo.setBookId(1L);m
+//        bookReviewInfo.setBookId(1L);
+        bookReviewInfo.setBook(givenBook());
         bookReviewInfo.setAverageReviewScore(4.5f);
         bookReviewInfo.setReviewCount(2);
 
@@ -41,8 +43,10 @@ class BookReviewInfoRepositoryTest {
 
         System.out.println(">>> " + result);
 
+        // auto increment 는 롤백되도 증가한 상태이다.
+
         BookReviewInfo result2 = bookRepository
-                .findById(1L)
+                .findById(7L)
                 .orElseThrow(RuntimeException::new)
                 .getBookReviewInfo();
 

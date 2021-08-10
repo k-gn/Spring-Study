@@ -13,10 +13,10 @@ import javax.persistence.PreUpdate;
 
 public class UserEntityListener {
     // @PostLoad : select 이후 실행
-    @PrePersist
-    @PreUpdate
-//    @PostPersist
-//    @PostUpdate
+//    @PrePersist
+//    @PreUpdate
+    @PostPersist
+    @PostUpdate
     public void prePersistAndPreUpdate(Object o) { // 감지된 오브젝트를 받음
         UserHistoryRepository userHistoryRepository = BeanUtils.getBean(UserHistoryRepository.class); // 리스너 클래스는 자동 주입을 할 수 없어서 직접 불러와야함
 
@@ -30,5 +30,7 @@ public class UserEntityListener {
         userHistory.setUser(user); // 연관관계는 참조하고 있어야 동작된다.
 
         userHistoryRepository.save(userHistory);
+        user.getUserHistories().add(userHistory);
+        System.out.println("userHistory : " + userHistory);
     }
 }

@@ -38,4 +38,9 @@ class TestServiceTest {
 
         testService.find(1L);
     }
+
+    @Test
+    public void findall() {
+        testService.findall();
+    }
 }

@@ -25,6 +25,7 @@ import org.springframework.data.domain.Sort.Order;
 import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest // spring context loading
+@Transactional
 class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
@@ -32,7 +33,7 @@ class UserRepositoryTest {
     private UserHistoryRepository userHistoryRepository;
 
     @Test
-    @Transactional // lazy 로딩 때 세션 유지 + test code에서 사용 시 자동으로 rollback
+//    @Transactional // lazy 로딩 때 세션 유지 + test code에서 사용 시 자동으로 rollback
     void crud() { // create, read, update, delete
 //        userRepository.save(new User());
 
