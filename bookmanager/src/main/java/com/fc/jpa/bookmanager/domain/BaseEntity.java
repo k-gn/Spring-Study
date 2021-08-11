@@ -1,5 +1,6 @@
 package com.fc.jpa.bookmanager.domain;
 import java.time.LocalDateTime;
+import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 
@@ -16,9 +17,16 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners(value = AuditingEntityListener.class) // 이미 스프링에서 만들어 놓은 엔티티 리스너를 사용 (Auditing : 감시)
 public class BaseEntity implements Auditable {
 
+    // | now()               | now(3)                  | now(6)                    |
+    //+---------------------+-------------------------+----------------------------+
+    //| 2015-07-24 03:32:30 | 2015-07-24 03:32:30.155 | 2015-07-24 03:32:30.155405 |
+
     @CreatedDate
+    @Column(nullable = false, updatable = false, columnDefinition = "datetime default now() comment '생성시간'")
+    // columnDefinition : 해당 컬럼의 타입, default 지정 가능, auto ddl 할 때 주는 추가적인 속성값
     private LocalDateTime createdAt;
 
     @LastModifiedDate
+    @Column(nullable = false, columnDefinition = "datetime(6) default now(6) comment '수정시간'") // 초단위를 최대 6자리
     private LocalDateTime updatedAt;
 }

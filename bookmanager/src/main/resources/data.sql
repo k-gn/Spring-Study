@@ -8,9 +8,18 @@ insert into user (`id`, `name`, `email`, `created_at`, `updated_at`) values (3, 
 insert into user (`id`, `name`, `email`, `created_at`, `updated_at`) values (4, 'james', 'james@slowcampus.com', now(), now());
 -- call next value for hibernate_sequence;
 insert into user (`id`, `name`, `email`, `created_at`, `updated_at`) values (5, 'martin', 'martin@another.com', now(), now());
--- insert into publisher(`id`, `name`) values (1, '패스트캠퍼스');
--- insert into book(`id`, `name`, `publisher_id`, `deleted`, `status`) values (1, 'JPA 초격차 패키지', 1, false, 100);
--- insert into book(`id`, `name`, `publisher_id`, `deleted`, `status`) values (2, 'Spring Security 초격차 패키지', 1, false, 200);
+
+insert into team values (1);
+
+insert into member(`member_id`, `name`, `team_id`) values (1, 'kkn1', 1);
+insert into member(`member_id`, `name`, `team_id`) values (2, 'kkn2', 1);
+insert into member(`member_id`, `name`, `team_id`) values (3, 'kkn3', 1);
+
+
+insert into publisher(`id`, `name`) values (1, '패스트캠퍼스');
+insert into book(`id`, `name`, `publisher_id`, `deleted`, `status`) values (1, 'JPA 초격차 패키지', 1, false, 100);
+insert into book(`id`, `name`, `publisher_id`, `deleted`, `status`) values (2, 'Spring Security 초격차 패키지', 1, false, 200);
+insert into book(`id`, `name`, `publisher_id`, `deleted`, `status`) values (3, 'Spring 초격차 패키지', 1, true, 300);
 --
 -- insert into book(`id`, `name`, `publisher_id`, `deleted`, `status`) values (3, 'SpringBoot 올인원 패키지', 1, true, 100);
 --
