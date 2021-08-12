@@ -1,9 +1,11 @@
 package com.fc.jpa.bookmanager.repository;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.contains;
 import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.endsWith;
 
+import com.fc.jpa.bookmanager.domain.Address;
 import com.fc.jpa.bookmanager.domain.Gender;
 import com.fc.jpa.bookmanager.domain.User;
 import com.fc.jpa.bookmanager.domain.UserHistory;
@@ -24,6 +26,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Order;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+
 @SpringBootTest // spring context loading
 @Transactional
 class UserRepositoryTest {
@@ -31,6 +35,8 @@ class UserRepositoryTest {
     private UserRepository userRepository;
     @Autowired
     private UserHistoryRepository userHistoryRepository;
+    @Autowired
+    private EntityManager entityManager;
 
     @Test
 //    @Transactional // lazy 로딩 때 세션 유지 + test code에서 사용 시 자동으로 rollback
@@ -40,20 +46,15 @@ class UserRepositoryTest {
 //        List<User> users = userRepository.findAll(Sort.by(Sort.Direction.DESC, "name"));
 //        List<User> users = userRepository.findAllById(Lists.newArrayList(1L, 3L, 5L));
 
-        User user1 = new User("jack", "jack@jack.com");
-        User user2 = new User("steve", "steve@steve.com");
-        User user3 = new User("john", "john@john.com");
-        userRepository.saveAll(Lists.newArrayList(user1, user2, user3));
-
-        List<User> users = userRepository.findAll();
-        users.forEach(System.out::println);
-        System.out.println("=========================================");
-
-        User user4 = userRepository.getOne(1L); // getOne : lazy
-        System.out.println(user4);
-
-        User user = userRepository.findById(4L).orElse(null); // findById : eager
-        System.out.println(user);
+//        List<User> users = userRepository.findAll();
+//        users.forEach(System.out::println);
+//        System.out.println("=========================================");
+//
+//        User user4 = userRepository.getOne(1L); // getOne : lazy
+//        System.out.println(user4);
+//
+//        User user = userRepository.findById(4L).orElse(null); // findById : eager
+//        System.out.println(user);
 
 //        userRepository.save(new User("new martin", "newmartin@nm.com"));
 //        userRepository.flush(); // db 반영시점을 조절 (영속성 컨텍스트의 변경 내용을 DB 에 반영)
@@ -174,20 +175,22 @@ class UserRepositoryTest {
 
     @Test
     void enumTest() {
-        User user1 = new User("jack", "jack@jack.com");
-        User user2 = new User("steve", "steve@steve.com");
-        User user3 = new User("john", "john@john.com");
-        userRepository.saveAll(Lists.newArrayList(user1, user2, user3));
+//        User user1 = new User("jack", "jack@jack.com");
+//        User user2 = new User("steve", "steve@steve.com");
+//        User user3 = new User("john", "john@john.com");
+//        userRepository.saveAll(Lists.newArrayList(user1, user2, user3));
 
         User user = userRepository.findById(1L).orElseThrow(RuntimeException::new);
         user.setGender(Gender.MALE);
 
         userRepository.save(user);
 
+        // gender 출력 시 ordinal 이여도 자동으로 string 으로 출력됨 ==> jpa 에서 enum 데이터를 가져올 때 Converter 가 동작한다.
+        // 자바 객체화 시 db 데이터와 형식이 다를 경우 Converter 를 통해서 데이터를 가져오는 즉시 정보를 변경해서 핸들링 가능
         userRepository.findAll().forEach(System.out::println);
 
         System.out.println(userRepository.findRawRecord().get("gender"));
-        System.out.println(userRepository.findRawRecord().get("email"));
+//        System.out.println(userRepository.findRawRecord().get("email"));
     }
 
     @Test
@@ -270,5 +273,47 @@ class UserRepositoryTest {
         result.forEach(System.out::println);
 
         System.out.println("UserHistory.getUser() : " + userHistoryRepository.findAll().get(0).getUser());
+    }
+
+    @Test
+    void embedTest() {
+//        userRepository.findAll().forEach(System.out::println);
+//        System.out.println("=========================================");
+        User user = new User();
+        user.setName("steve");
+        user.setHomeAddress(new Address("서울시", "강남구", "강남대로 364 미왕빌딩", "06241"));
+        user.setCompanyAddress(new Address("서울시", "성동구", "성수이로 113 제강빌딩", "04794"));
+
+        userRepository.save(user);
+//        userRepository.findAll().forEach(System.out::println);
+//        userHistoryRepository.findAll().forEach(System.out::println);
+
+        User user1 = new User();
+        user1.setName("joshua");
+        user1.setHomeAddress(null);
+        user1.setCompanyAddress(null);
+
+        userRepository.save(user1);
+
+        User user2 = new User();
+        user2.setName("jordan");
+        user2.setHomeAddress(new Address());
+        user2.setCompanyAddress(new Address());
+
+        userRepository.save(user2);
+
+        // address 값이 그냥 null 로 들어가거나 Address(null, null, null, null) 로 들어가는 두가지 경우가 있다.
+        // 그 이유는 영속성 캐시 때문에,, (실제 db 값은 똑같이 null)
+//        entityManager.clear();
+
+        userRepository.findAll().forEach(System.out::println);
+        userHistoryRepository.findAll().forEach(System.out::println);
+
+        userRepository.findAllRawRecord().forEach(a -> System.out.println(a.values()));
+
+        assertAll(
+                () -> assertThat(userRepository.findById(7L).get().getHomeAddress()).isNull(),
+                () -> assertThat(userRepository.findById(8L).get().getHomeAddress()).isInstanceOf(Address.class)
+        );
     }
 }

@@ -6,12 +6,17 @@ import com.fc.jpa.bookmanager.domain.Book;
 import com.fc.jpa.bookmanager.domain.Publisher;
 import com.fc.jpa.bookmanager.domain.Review;
 import com.fc.jpa.bookmanager.domain.User;
+import com.fc.jpa.bookmanager.repository.dto.BookStatus;
+import com.fc.jpa.bookmanager.service.BookService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @SpringBootTest
 public class BookRepositoryTest {
@@ -23,8 +28,10 @@ public class BookRepositoryTest {
     private ReviewRepository reviewRepository;
     @Autowired
     private UserRepository userRepository;
-    @Test
+    @Autowired
+    private BookService bookService;
 
+    @Test
     void bookTest() {
         Book book = new Book();
         book.setName("Jpa 초격차 패키지");
@@ -114,14 +121,75 @@ public class BookRepositoryTest {
 
     @Test
     void queryTest() {
-        bookRepository.findAll().forEach(System.out::println);
+//        bookRepository.findAll().forEach(System.out::println);
 
-        System.out.println(bookRepository.findByCategoryIsNullAndNameEqualsAndCreatedAtGreaterThanEqualAndUpdatedAtGreaterThanEqual(
-                "JPA 초격차 패키지",
-                LocalDateTime.now().minusDays(1L),
-                LocalDateTime.now().minusDays(1L)
-        ));
+//        System.out.println(bookRepository.findByCategoryIsNullAndNameEqualsAndCreatedAtGreaterThanEqualAndUpdatedAtGreaterThanEqual(
+//                "JPA 초격차 패키지",
+//                LocalDateTime.now().minusDays(1L),
+//                LocalDateTime.now().minusDays(1L)
+//        ));
+
+//        System.out.println(bookRepository.findByNameRecently(
+//                "JPA 초격차 패키지", LocalDateTime.now().minusDays(1L), LocalDateTime.now().minusDays(1L)));
+
+//        System.out.println(bookRepository.findBookNameAndCategory());
+//        bookRepository.findBookNameAndCategory().forEach(tuple -> System.out.println(tuple.get(0)));
+
+//        System.out.println(bookRepository.findId());
+
+//        bookRepository.findBookNameAndCategoryObj().forEach(objs -> {
+//            System.out.println(objs[0]);
+//            System.out.println("=============================");
+//        });
+
+        bookRepository.findBookNameAndCategory(PageRequest.of(0, 2, Sort.by("id").descending())).forEach(System.out::println);
     }
+
+    @Test
+    void nativeTest() {
+//        bookRepository.findAll().forEach(System.out::println);
+//        System.out.println("========================================");
+//        bookRepository.findAllCustom().forEach(System.out::println);
+
+//        List<Book> books = bookRepository.findAll();
+//        System.out.println("==================================");
+//        for(Book book : books) {
+//            book.setCategory("IT 전문서");
+//        }
+//        bookRepository.saveAll(books);
+//        System.out.println(bookRepository.findAll());
+
+//        System.out.println("affected rows : " + bookRepository.updateCategories());
+//        bookRepository.findAllCustom().forEach(System.out::println);
+
+        System.out.println(bookRepository.showTables());
+    }
+
+    @Test
+    void converterTest() {
+//        bookRepository.findAll().forEach(System.out::println);
+
+        Book book = new Book();
+        book.setName("또다른 IT전문서적");
+        book.setStatus(new BookStatus(200));
+
+        bookRepository.save(book);
+        System.out.println("============================================");
+        System.out.println(bookRepository.findRawRecord().values());
+        System.out.println("============================================");
+
+        List<Book> books = bookRepository.findAll();
+//        bookRepository.findAll().forEach(System.out::println);
+        System.out.println("============================================");
+    }
+
+    @Test
+    void convert() {
+//        bookRepository.findAll();
+        System.out.println("========================================");
+        bookService.getAll();
+    }
+
 
     private void givenBookAndReview() {
         givenReview(givenUser(), givenBook(givenPublisher()));

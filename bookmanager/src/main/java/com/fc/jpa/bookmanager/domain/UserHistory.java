@@ -35,6 +35,24 @@ public class UserHistory extends BaseEntity {
     @ToString.Exclude
     private User user;
 
+    @Embedded
+    @AttributeOverrides({ // 동일한 컬럼을 재정의 할 수 있는 어노테이션 (임베디드 타입에 정의한 매핑정보를 재정의)
+            @AttributeOverride(name = "city", column = @Column(name = "home_city")),
+            @AttributeOverride(name = "district", column = @Column(name = "home_district")),
+            @AttributeOverride(name = "detail", column = @Column(name = "home_address_detail")),
+            @AttributeOverride(name = "zipCode", column = @Column(name = "home_zip_code"))
+    })
+    private Address homeAddress;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "city", column = @Column(name = "company_city")),
+            @AttributeOverride(name = "district", column = @Column(name = "company_district")),
+            @AttributeOverride(name = "detail", column = @Column(name = "company_address_detail")),
+            @AttributeOverride(name = "zipCode", column = @Column(name = "company_zip_code"))
+    })
+    private Address companyAddress;
+
 //    @CreatedDate
 //    private LocalDateTime createdAt;
 //

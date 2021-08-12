@@ -45,12 +45,12 @@ class BookReviewInfoRepositoryTest {
 
         // auto increment 는 롤백되도 증가한 상태이다.
 
-        BookReviewInfo result2 = bookRepository
-                .findById(7L)
-                .orElseThrow(RuntimeException::new)
-                .getBookReviewInfo();
-
-        System.out.println(">>> " + result2);
+//        BookReviewInfo result2 = bookRepository
+//                .findById(7L)
+//                .orElseThrow(RuntimeException::new)
+//                .getBookReviewInfo();
+//
+//        System.out.println(">>> " + result2);
     }
 
     private Book givenBook() {

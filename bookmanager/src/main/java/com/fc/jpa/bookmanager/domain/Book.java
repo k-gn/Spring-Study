@@ -1,8 +1,10 @@
 package com.fc.jpa.bookmanager.domain;
+import com.fc.jpa.bookmanager.domain.converter.BookStatusConverter;
 import com.fc.jpa.bookmanager.domain.listener.Auditable;
 
 import javax.persistence.*;
 
+import com.fc.jpa.bookmanager.repository.dto.BookStatus;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -55,7 +57,7 @@ public class Book extends BaseEntity {
     // 보통 manytoone 쪽에 joincolumn 쓰고 onetomany 쪽에 mappedby 쓰는 것 같다.. (mappedby 도 중간테이블 안만들어줌)
     // 연관관계가 있는 경우 cascade 설정 가능 (Entity의 상태 변화를 전파시키는 옵션)
     // 예를 들어 부모 엔티티를 저장할 때 자식 엔티티도 함께 저장하거나, 부모 엔티티를 삭제할 때 관련된 자식엔티티도 함께 삭제하고 싶을 때 사용
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     private Publisher publisher;
 
     //    @ManyToMany
@@ -74,7 +76,13 @@ public class Book extends BaseEntity {
     // db 상에는 존재하지만 숨겨서 가져오는 방식
     private boolean deleted;
 
-    private int status;
+//    private int status; // 판매 상태
+//    @Convert(converter = BookStatusConverter.class) // @Convert : 해당 필드에 적용할 컨버터 클래스 작성
+    private BookStatus status; // 판매상태
+
+//    public boolean isDisplayed() {
+//        return status == 200;
+//    }
 
 //    @CreatedDate
 //    private LocalDateTime createdAt;

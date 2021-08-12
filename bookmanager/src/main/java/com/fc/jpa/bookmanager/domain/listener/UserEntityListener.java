@@ -28,6 +28,8 @@ public class UserEntityListener {
         userHistory.setName(user.getName());
         userHistory.setEmail(user.getEmail());
         userHistory.setUser(user); // 연관관계는 참조하고 있어야 동작된다.
+        userHistory.setHomeAddress(user.getHomeAddress());
+        userHistory.setCompanyAddress(user.getCompanyAddress());
 
         userHistoryRepository.save(userHistory);
         user.getUserHistories().add(userHistory);

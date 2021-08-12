@@ -52,6 +52,8 @@ public class User extends BaseEntity {
     // ordinal 방식은 추 후 enum이 추가되거나 수정될 때 문제가 발생할 수 있다.
     // 따라서 반드시 EnumType.String 으로 설정하여 문자로 다루자.
     // Enum 설정 어노테이션
+    // EnumType.ORDINAL : enum 순서 값을 DB에 저장
+    // EnumType.STRING : enum 이름을 DB에 저장
     @Enumerated(value = EnumType.STRING)
     private Gender gender;
 
@@ -66,6 +68,26 @@ public class User extends BaseEntity {
     @JoinColumn(name = "user_id")
     @ToString.Exclude
     private List<Review> reviews = new ArrayList<>();
+
+    // AttributeOverrides 로 재정의할지 새로운 객체를 만들지는 개발자 취향
+    @Embedded
+    @AttributeOverrides({ // 동일한 컬럼을 재정의 할 수 있는 어노테이션 (임베디드 타입에 정의한 매핑정보를 재정의)
+            @AttributeOverride(name = "city", column = @Column(name = "home_city")),
+            @AttributeOverride(name = "district", column = @Column(name = "home_district")),
+            @AttributeOverride(name = "detail", column = @Column(name = "home_address_detail")),
+            @AttributeOverride(name = "zipCode", column = @Column(name = "home_zip_code"))
+    })
+    private Address homeAddress;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "city", column = @Column(name = "company_city")),
+            @AttributeOverride(name = "district", column = @Column(name = "company_district")),
+            @AttributeOverride(name = "detail", column = @Column(name = "company_address_detail")),
+            @AttributeOverride(name = "zipCode", column = @Column(name = "company_zip_code"))
+    })
+    private Address companyAddress;
+
 
     // nullable 같은 것들은 사전에 validation을 해주는게 아니라 db 컬럼의 not null 속성 같은 것을 지정해주는 것이다.
 //    @Column(name = "crtdat", nullable = false, updatable = false, unique = false) // 별도로 컬럼 매핑 및 속성 설정

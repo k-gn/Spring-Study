@@ -3,6 +3,7 @@ package com.fc.jpa.bookmanager.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -23,9 +24,15 @@ public class Review extends BaseEntity {
 
     private float score;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @ToString.Exclude
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @ToString.Exclude
     private Book book;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "review_id")
+    private List<Comment> comments;
 }

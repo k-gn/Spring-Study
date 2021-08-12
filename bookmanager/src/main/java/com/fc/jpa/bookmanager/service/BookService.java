@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Service
 @Transactional // 클래스에도 선언 가능 - 모든 메소드에 트랜잭션 적용
@@ -70,6 +71,18 @@ public class BookService {
 //        bookRepository.save(book);
 
     }
+
+    @Transactional
+    public void getAll() {
+        List<Book> books = bookRepository.findAll();
+        System.out.println("=================================================");
+        books.forEach(System.out::println);
+
+        System.out.println("=================================================");
+//        return books;
+    }
+
+
 }
 // 트랜잭션의 잘못된 사용
 // 1. 런타임이 아닌 checkedException(Exception - RuntimeException을 상속하지 않는 클래스) 을 사용할 때 롤백 처리안됨

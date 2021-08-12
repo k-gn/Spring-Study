@@ -35,5 +35,9 @@ spring:
 server:
   port: 8070
 
+# 로깅 레벨 지정
+logging:
+  level:
+    root: trace # TRACE 레벨은 너무 많은 로그를 남겨서 테스트 정도로만 쓴다.
 
 # properties 보단 yml 을 사용하는 추세다.

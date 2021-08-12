@@ -126,4 +126,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // 컬럼명이 key값 해당 쿼리값이 value에 저장된다. (리턴이 가능하면 어떤 타입이든 반환타입이 될 수 있다.)
     @Query(value = "select * from user limit 1;", nativeQuery = true)
     Map<String, Object> findRawRecord();
+
+    @Query(value = "select * from user", nativeQuery = true)
+    List<Map<String, Object>> findAllRawRecord();
 }

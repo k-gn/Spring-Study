@@ -90,4 +90,13 @@ class BookServiceTest {
     // # NEVER : 트랜잭션을 생성하지 않습니다. 부모 트랜잭션이 존재한다면 예외를 발생 (트랜잭션이 없어야함)
     // # SUPPORTS : 부모 트랜잭션이 있다면 합류합니다. 진행중인 부모 트랜잭션이 없다면 트랜잭션을 생성하지 않습니다.
     // # NOT_SUPPORTED : 부모 트랜잭션이 있다면 보류시킵니다. 진행중인 부모 트랜잭션이 없다면 트랜잭션을 생성하지 않습니다.
+
+    @Test
+    void converterErrorTest() {
+        System.out.println("============================================");
+        bookService.getAll();
+        System.out.println("============================================");
+
+//        bookRepository.findAll().forEach(System.out::println);
+    }
 }
