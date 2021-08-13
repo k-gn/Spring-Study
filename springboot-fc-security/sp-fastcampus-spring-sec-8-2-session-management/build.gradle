@@ -13,12 +13,14 @@ buildscript {
     }
 }
 
+// 모든 프로젝트에서 적용될 것
 allprojects {
     group = "com.sp.fc"
     version = "1.0.0"
 
 }
 
+// 각각 하위 프로젝트에 적용될 것
 subprojects {
 
     apply plugin: "java"
