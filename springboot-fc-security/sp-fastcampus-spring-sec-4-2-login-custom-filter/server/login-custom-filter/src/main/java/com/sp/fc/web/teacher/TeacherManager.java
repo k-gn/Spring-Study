@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Set;
 
-@Component
+@Component // 실제로 AuthenticationProvider 를 구현할 일은 적다.
 public class TeacherManager implements AuthenticationProvider, InitializingBean {
 
     private HashMap<String, Teacher> teacherDB = new HashMap<>();

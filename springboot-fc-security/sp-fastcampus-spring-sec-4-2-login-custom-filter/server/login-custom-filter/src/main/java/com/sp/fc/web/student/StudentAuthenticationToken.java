@@ -12,6 +12,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+// Student 통행증 클래스
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -31,3 +32,7 @@ public class StudentAuthenticationToken implements Authentication {
     }
 
 }
+// Authentication
+// 통행증 같은 역할
+// ~Token 이름을 가진 구현체들이 있다.
+// 인증을 하거나 또는 받은 객체가 들어있다.

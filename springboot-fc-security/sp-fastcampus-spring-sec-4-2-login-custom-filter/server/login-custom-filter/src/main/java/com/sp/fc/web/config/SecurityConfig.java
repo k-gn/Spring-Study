@@ -29,6 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     * 인증에 대한 지원을 설정 */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        // provider 를 등록하면 필요 시 알아서 순서대로 실행된다.
         auth.authenticationProvider(studentManager);
         auth.authenticationProvider(teacherManager);
     }
@@ -51,7 +52,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         .defaultSuccessUrl("/", false)
                         .failureUrl("/login-error")
                 )
-                .addFilterAt(filter, UsernamePasswordAuthenticationFilter.class) // customLoginFilter 등록
+                // UsernamePasswordAuthenticationFilter 위치에 customLoginFilter 등록
+                .addFilterAt(filter, UsernamePasswordAuthenticationFilter.class)
                 .logout(logout->logout.logoutSuccessUrl("/"))
                 .exceptionHandling(e->e.accessDeniedPage("/access-denied"))
                 ;

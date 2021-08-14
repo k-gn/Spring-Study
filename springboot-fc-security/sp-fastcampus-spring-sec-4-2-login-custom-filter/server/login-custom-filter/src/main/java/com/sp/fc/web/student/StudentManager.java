@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Set;
 
+// Student 통행증을 받을 Provider 구현클래스
 @Component
 public class StudentManager implements AuthenticationProvider, InitializingBean {
 
@@ -36,7 +37,7 @@ public class StudentManager implements AuthenticationProvider, InitializingBean 
     }
 
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet() throws Exception { // 빈 초기화시 수행될 작업
         Set.of(
                 new Student("hong", "홍길동", Set.of(new SimpleGrantedAuthority("ROLE_STUDENT"))),
                 new Student("kang", "강아지", Set.of(new SimpleGrantedAuthority("ROLE_STUDENT"))),
