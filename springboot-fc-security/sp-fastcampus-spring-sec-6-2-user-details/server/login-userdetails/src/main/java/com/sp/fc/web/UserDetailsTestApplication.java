@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 // 스캔 범위 설정
+// (모듈로 사용하고 있어서 스캔 지정 필요한 듯 -> 기본적으로 빈은 빈끼리 주입이 가능하기 때문)
 @SpringBootApplication(scanBasePackages = {
         "com.sp.fc.user",
         "com.sp.fc.web"

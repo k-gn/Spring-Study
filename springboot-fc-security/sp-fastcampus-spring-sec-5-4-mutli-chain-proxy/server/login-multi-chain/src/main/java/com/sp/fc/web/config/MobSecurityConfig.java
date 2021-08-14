@@ -38,6 +38,9 @@ public class MobSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatcher("/api/**")
                 .csrf().disable()
                 .authorizeRequests(request->request.anyRequest().authenticated())
+                // 기본적으로 로그인 페이지를 사용할 수 없는 상황에서 사용합니다.
+                // SPA 페이지 (react, angular, vue ...)
+                // 브라우저 기반의 모바일 앱(브라우저 개반의 앱, ex: inoic )
                 .httpBasic()
                 ;
     }

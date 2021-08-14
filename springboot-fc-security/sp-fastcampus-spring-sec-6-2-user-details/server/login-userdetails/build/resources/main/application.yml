@@ -24,5 +24,5 @@ spring:
     username: sa
     password:
 
-  jpa:
+  jpa: # 방언 설정
     database-platform: org.hibernate.dialect.H2Dialect

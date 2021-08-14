@@ -34,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     PasswordEncoder passwordEncoder(){
         return NoOpPasswordEncoder.getInstance();
-    }
+    } // 테스트용으로만 사용해야할 인코더
 
     @Bean
     RoleHierarchy roleHierarchy(){

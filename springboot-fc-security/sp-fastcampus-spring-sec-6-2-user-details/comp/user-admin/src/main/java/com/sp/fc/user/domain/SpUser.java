@@ -33,7 +33,7 @@ public class SpUser implements UserDetails {
     // cascade : Entity의 상태 변화를 전파시키는 옵션
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     // 조인할 외래키 설정
-    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name="user_id"))
+    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name="user_id")) // foreignKey : 외래키 제약조건을 직접 지정가능
     private Set<SpAuthority> authorities;
 
     private boolean enabled;

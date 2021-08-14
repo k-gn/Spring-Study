@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dc84945-c0da-483b-8f62-4b0193d80b51" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/.gradle/6.7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/.gradle/6.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/.gradle/6.7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/.gradle/6.7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/.gradle/6.7.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/.gradle/6.7.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/.gradle/6.7.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/.gradle/6.7.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/server/login-basic/build/classes/java/main/com/sp/fc/web/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/server/login-basic/build/classes/java/main/com/sp/fc/web/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/server/login-basic/build/resources/main/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/server/login-basic/build/resources/main/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/server/login-basic/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/server/login-basic/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/server/login-basic/src/main/java/com/sp/fc/web/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/server/login-basic/src/main/java/com/sp/fc/web/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/server/login-basic/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/server/login-basic/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/server/login-basic/src/main/resources/templates/loginForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sp-fastcampus-spring-sec-3-2-BasicLogin-/server/login-basic/src/main/resources/templates/loginForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/login-custom-filter/src/main/java/com/sp/fc/web/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/login-custom-filter/src/main/java/com/sp/fc/web/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/login-custom-filter/src/main/java/com/sp/fc/web/student/StudentAuthenticationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/login-custom-filter/src/main/java/com/sp/fc/web/student/StudentAuthenticationToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/login-custom-filter/src/main/java/com/sp/fc/web/student/StudentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/login-custom-filter/src/main/java/com/sp/fc/web/student/StudentManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/login-custom-filter/src/main/java/com/sp/fc/web/teacher/TeacherManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/login-custom-filter/src/main/java/com/sp/fc/web/teacher/TeacherManager.java" afterDir="false" />
-    </list>
+    <list default="true" id="8dc84945-c0da-483b-8f62-4b0193d80b51" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +44,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -114,7 +95,7 @@
       <workItem from="1623076040938" duration="471000" />
       <workItem from="1623113734474" duration="26000" />
       <workItem from="1628842875523" duration="4906000" />
-      <workItem from="1628903524711" duration="596000" />
+      <workItem from="1628903524711" duration="663000" />
     </task>
     <servers />
   </component>

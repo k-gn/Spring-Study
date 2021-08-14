@@ -63,7 +63,7 @@ public class BasicAuthenticationTest {
     void test_3() {
         // TestRestTemplate
         // RestTemplate 의 테스트를 위한 버전 (RestTemplate 에 대한 통합 테스트를 단순화, 테스트 중에 인증을 용이하게 한다.)
-        // 기본으로 Basic Token을 지원한다. ( basic header token을 알아서 넣어준다.)
+        // 기본으로 Basic Token을 지원한다. ( basic header token을 알아서 넣어서 request를 날려준다.)
         TestRestTemplate testClient = new TestRestTemplate("user1", "1111");
         String resp = testClient.getForObject(greetingUrl(), String.class);
         assertEquals("hello", resp);
