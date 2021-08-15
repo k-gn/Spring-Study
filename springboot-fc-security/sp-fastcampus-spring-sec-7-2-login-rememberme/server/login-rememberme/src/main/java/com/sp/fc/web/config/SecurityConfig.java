@@ -51,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return roleHierarchy;
     }
 
-    // session state check
+    // session state check (세션 리스너 빈 등록)
     @Bean
     public ServletListenerRegistrationBean<HttpSessionEventPublisher> httpSessionEventPublisher() {
         return new ServletListenerRegistrationBean<HttpSessionEventPublisher>(new HttpSessionEventPublisher(){
@@ -116,6 +116,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling(error->
                         error.accessDeniedPage("/access-denied")
                 )
+                // 세션이 만료되어도 자동로그인을 통해 로그인 가능
                 .rememberMe(r->r
                         .rememberMeServices(rememberMeServices())
                 )
