@@ -29,8 +29,9 @@ public class MethodSecurityConfiguration extends GlobalMethodSecurityConfigurati
         decisionVoters.add(new CustomVoter());
 
         return new AffirmativeBased(decisionVoters);
+//       return new UnanimousBased(decisionVoters)
 //        ConsensusBased committee = new ConsensusBased(decisionVoters);
-//        committee.setAllowIfEqualGrantedDeniedDecisions(false);
+//        committee.setAllowIfEqualGrantedDeniedDecisions(false); // 동표일 경우 처리
 //        return committee;
     }
 
