@@ -80,6 +80,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         JdbcTokenRepositoryImpl repository = new JdbcTokenRepositoryImpl();
         repository.setDataSource(dataSource);
         try{
+            // 하나 지워보고 에러나면 테이블이 없다는 것이니 catch에서 테이블을 생성시켜주기
             repository.removeUserTokens("1");
         }catch(Exception ex){
             repository.setCreateTableOnStartup(true);
@@ -87,10 +88,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return repository;
     }
 
+    // RememberMeAuthenticationFilter 에서 검증 후 RememberMeAuthenticationToken 을 발급하여 securityContext 에 저장(통행증 발급)
+    // securityContextHolder 에선 ThreadLocal 환경으로 securityContext 를 관리하고 ThreadLocal 이 처리를 끝내고 나갈 때 지운다.
+    // 인증 후 부턴 세션에서 securityContext 를 securityContextHolder 로 다시 가져오며 끝난 후 지우기를 반복한다.
+    // 기본적으론 토큰베이스 서비스를 사용 (내부적으로 userdetailsservice 동작함)
+    // PersistentTokenBasedRememberMeServices 를 사용하면 좀 더 보안이 좋다. (토큰을 db에 저장, series:token)
     @Bean
     PersistentTokenBasedRememberMeServices rememberMeServices(){
         PersistentTokenBasedRememberMeServices service =
-                new PersistentTokenBasedRememberMeServices("hello",
+                new PersistentTokenBasedRememberMeServices("hello", // 이전 저장값에 대한 유효성 검증을 위한 키값
                         spUserService,
                         tokenRepository()
                         );

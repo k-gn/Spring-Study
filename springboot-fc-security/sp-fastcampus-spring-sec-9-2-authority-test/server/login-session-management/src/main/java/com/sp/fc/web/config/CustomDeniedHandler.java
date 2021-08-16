@@ -17,6 +17,7 @@ public class CustomDeniedHandler implements AccessDeniedHandler {
             HttpServletResponse response,
             AccessDeniedException accessDeniedException) throws IOException, ServletException
     {
+        // 상황에 따라 다른 에러페이지 보여주기
         if(accessDeniedException instanceof YouCannotAccessUserPage){
             request.getRequestDispatcher("/access-denied").forward(request, response);
         }else{

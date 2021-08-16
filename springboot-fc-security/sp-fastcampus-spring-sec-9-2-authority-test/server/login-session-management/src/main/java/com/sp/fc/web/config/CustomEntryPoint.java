@@ -14,6 +14,7 @@ public class CustomEntryPoint implements AuthenticationEntryPoint {
                          HttpServletResponse response,
                          AuthenticationException authException) throws IOException, ServletException {
 
+        // 로그인 안할 경우에 발생하는 에러들
         request.getRequestDispatcher("/login-required")
                 .forward(request, response);
 

@@ -115,6 +115,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     PersistentTokenBasedRememberMeServices rememberMeServices(){
         PersistentTokenBasedRememberMeServices service =
                 new PersistentTokenBasedRememberMeServices("hello",  spUserService, tokenRepository()) {
+                    // deny 발생 시 익명 사용자가 아닌 rememberMe 토큰을 받아 사용하는 사용자도 로그인 창으로 리다이렉트 되는 문제를 해결하기 위해
+                    // createSuccessfulAuthentication 를 오버라이딩 해준다.
+                    // rememberMe 토큰이 아닌 UsernamePasswordAuthenticationToken 를 리턴해서 속여줄 수 있다.
+                    // 단, 사이트 운영 정책에 따라 다를 테니 상황에 맞게 쓰면 될듯
+                    // 스프링에선 rememberMeAuthentication 사용자를 fullAuthentication 과 별도로 취급하길 의도한 것 같음
                         @Override
                         protected Authentication createSuccessfulAuthentication(HttpServletRequest request, UserDetails user) {
                             return new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword(), null);
