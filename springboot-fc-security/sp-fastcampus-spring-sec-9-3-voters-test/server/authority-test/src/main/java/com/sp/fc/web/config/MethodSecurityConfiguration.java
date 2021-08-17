@@ -23,12 +23,14 @@ import java.util.List;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class MethodSecurityConfiguration extends GlobalMethodSecurityConfiguration {
 
+    // hasPermission을 사용하려면 permission을 evaluation할 수 있는 클래스를 만들고 GlobalMethodSecurity 설정에 연결 해야한다.
     @Autowired
     private CustomPermissionEvaluator permissionEvaluator;
 
     // 핸들러를 오버라이딩 해서 CustomMethodSecurityExpressionRoot 와 CustomPermissionEvaluator 를 적용
     @Override
     protected MethodSecurityExpressionHandler createExpressionHandler() {
+        // MethodSecurityExpressionHandler 구현 객체 = DefaultMethodSecurityExpressionHandler
         DefaultMethodSecurityExpressionHandler handler = new DefaultMethodSecurityExpressionHandler(){
             @Override
             protected MethodSecurityExpressionOperations createSecurityExpressionRoot(Authentication authentication, MethodInvocation invocation) {
@@ -37,6 +39,7 @@ public class MethodSecurityConfiguration extends GlobalMethodSecurityConfigurati
                 return root;
             }
         };
+        // handler 에 permissionEvaluator 를 넣고 root 에 전달
         handler.setPermissionEvaluator(permissionEvaluator);
         return handler;
     }

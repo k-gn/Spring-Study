@@ -46,6 +46,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     FilterSecurityInterceptor filterSecurityInterceptor;
 
+    // 스프링에서 권한은 기본적으로 Voter 기반의 AccessDecisionManager 가 처리
+    // 하지만 실제론 WebExpressionVoter 나 PIAAVoter 로 하는 권한 체크로 몰리고 있어서
+    // AccessDecisionManager 나 Voter 기능들을 잘 안쓴다.
+    // WebExpressionVoter -> SecurityExpressionHandler (createEvaluationContext) -> WebSecurityExpressionRoot
+    // PIAAVoter -> MethodSecurityExpressionHandler (createSecurityExpressionRoot) -> MethodSecurityExpressionRoot
+    // SpEL 을 써야하기 때문에 parser 가 Context 를 핸들링 해야한다. 따라서 각각 핸들러 가지고 있다.
+    // 또한 각각 루트객체가 존재해야해서 createEvaluationContext 와 createSecurityExpressionRoot 메소드를 사용해여 생성
+    // WebSecurityExpressionRoot 은 hasIpAddress(String) 메소드가 추가로 제공되고
+    // MethodSecurityExpressionRoot 는 filterObject 과 returnObject 에 바로 접근이 가능하다. (# 없이 접근이 가능)
+    // PathVariable 은 Context 에서 variable 로 취급해서 # 으로 검사 가능
+    // 빈은 @ 를 붙여서 검사 가능
+
     AccessDecisionManager filterAccessDecisionManager(){
         return new AccessDecisionManager() {
             @Override
@@ -77,10 +89,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests(
                         authority->authority
                                 .mvcMatchers("/greeting/{name}")
-                                    .access("@nameCheck.check(#name)")
+                                    .access("@nameCheck.check(#name)") // 특정 이름만 통과하도록 설정
                                 .anyRequest().authenticated()
 //                        .accessDecisionManager(filterAccessDecisionManager())
                 )
                 ;
     }
 }
+
+// SpEL : 컴퍼일 언어를 스크립트 처럼 동작하게 하는 표현식

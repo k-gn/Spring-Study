@@ -21,6 +21,8 @@ public class PaperController {
     @Autowired
     private PaperService paperService;
 
+    // 지금은 전처리만 하고 있지만 (PreInvocation) 실제로 객체를 가져왓을 때 후처리를 체크하는 경우가 더 많다.
+
     @PreAuthorize("isStudent()")
     @GetMapping("/mypapers")
     public List<Paper> myPapers(@AuthenticationPrincipal User user){

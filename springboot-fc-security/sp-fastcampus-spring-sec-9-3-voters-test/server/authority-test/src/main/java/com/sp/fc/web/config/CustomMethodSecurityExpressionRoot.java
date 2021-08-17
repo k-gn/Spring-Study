@@ -13,6 +13,7 @@ import org.springframework.security.web.access.expression.WebSecurityExpressionR
 public class CustomMethodSecurityExpressionRoot extends SecurityExpressionRoot
     implements MethodSecurityExpressionOperations {
 
+    // invocation 에서 호출당시 환경을 알 수 있다.
     MethodInvocation invocation;
 
     public CustomMethodSecurityExpressionRoot(Authentication authentication, MethodInvocation invocation) {
