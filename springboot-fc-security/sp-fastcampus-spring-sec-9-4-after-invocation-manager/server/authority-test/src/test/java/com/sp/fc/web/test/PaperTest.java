@@ -11,6 +11,7 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -26,7 +27,8 @@ public class PaperTest extends WebIntegrationTest{
             .paperId(1L)
             .title("시험지1")
             .tutorId("tutor1")
-            .studentIds(List.of("user1"))
+//            .studentIds(List.of("user1"))
+            .studentIds(Arrays.asList("user1"))
             .state(Paper.State.PREPARE)
             .build();
 
@@ -34,7 +36,8 @@ public class PaperTest extends WebIntegrationTest{
             .paperId(2L)
             .title("시험지2")
             .tutorId("tutor1")
-            .studentIds(List.of("user2"))
+//            .studentIds(List.of("user2"))
+            .studentIds(Arrays.asList("user2"))
             .state(Paper.State.READY)
             .build();
 
@@ -42,7 +45,8 @@ public class PaperTest extends WebIntegrationTest{
             .paperId(3L)
             .title("시험지3")
             .tutorId("tutor1")
-            .studentIds(List.of("user1"))
+//            .studentIds(List.of("user1"))
+            .studentIds(Arrays.asList("user1"))
             .state(Paper.State.READY)
             .build();
 
@@ -61,7 +65,7 @@ public class PaperTest extends WebIntegrationTest{
 
         assertEquals(200, response.getStatusCodeValue());
         assertEquals(1, response.getBody().size());
-        System.out.println(response.getBody());
+        System.out.println("response.getBody() : " + response.getBody());
 
     }
 

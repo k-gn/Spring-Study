@@ -47,8 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     FilterSecurityInterceptor filterSecurityInterceptor;
 
     // 스프링에서 권한은 기본적으로 Voter 기반의 AccessDecisionManager 가 처리
-    // 하지만 실제론 WebExpressionVoter 나 PIAAVoter 로 하는 권한 체크로 몰리고 있어서
-    // AccessDecisionManager 나 Voter 기능들을 잘 안쓴다.
+    // 하지만 실제론 WebExpressionVoter 나 PIAAVoter 로 하는 권한 체크로 몰리고 있다.
     // WebExpressionVoter -> SecurityExpressionHandler (createEvaluationContext) -> WebSecurityExpressionRoot
     // PIAAVoter -> MethodSecurityExpressionHandler (createSecurityExpressionRoot) -> MethodSecurityExpressionRoot
     // SpEL 을 써야하기 때문에 parser 가 Context 를 핸들링 해야한다. 따라서 각각 핸들러 가지고 있다.

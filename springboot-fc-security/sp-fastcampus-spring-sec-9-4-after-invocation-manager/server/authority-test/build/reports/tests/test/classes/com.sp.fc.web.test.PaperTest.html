@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - PaperTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>PaperTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.sp.fc.web.test.html">com.sp.fc.web.test</a> &gt; PaperTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">2.219s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">1. user1이 시험지 리스트 조회한다.</td>
+<td class="success">test_1()</td>
+<td class="success">2.219s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>13:31:09.694 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+13:31:09.728 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+13:31:09.812 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.sp.fc.web.test.PaperTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+13:31:09.845 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.sp.fc.web.test.PaperTest], using SpringBootContextLoader
+13:31:09.855 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.sp.fc.web.test.PaperTest]: class path resource [com/sp/fc/web/test/PaperTest-context.xml] does not exist
+13:31:09.856 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.sp.fc.web.test.PaperTest]: class path resource [com/sp/fc/web/test/PaperTestContext.groovy] does not exist
+13:31:09.856 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.sp.fc.web.test.PaperTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+13:31:09.858 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.sp.fc.web.test.PaperTest]: PaperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:31:09.981 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.sp.fc.web.test.PaperTest]
+13:31:10.181 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\myProject\SpringStudy\springboot-fc-security\sp-fastcampus-spring-sec-9-4-after-invocation-manager\server\authority-test\build\classes\java\main\com\sp\fc\web\AuthorityTestApplication.class]
+13:31:10.185 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.sp.fc.web.AuthorityTestApplication for test class com.sp.fc.web.test.PaperTest
+13:31:10.448 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.sp.fc.web.test.PaperTest]: using defaults.
+13:31:10.450 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+13:31:10.481 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/TransactionDefinition]
+13:31:10.483 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+13:31:10.484 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3e7f3db1, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5dcdb56c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5843fa42, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@76040534, org.springframework.test.context.support.DirtiesContextTestExecutionListener@31d12cf0, org.springframework.test.context.event.EventPublishingTestExecutionListener@1079973, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@46d1f2fb, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@10aa62b0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@28a46af9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@15d5a29f, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5cdadcf4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1fa69a3d]
+13:31:10.494 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@799b2a31 testClass = PaperTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@72ceab20 testClass = PaperTest, locations = '{}', classes = '{class com.sp.fc.web.AuthorityTestApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@732850bf, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@238c2232, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6134541, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@36cd1ad3, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@54ef0b8e, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@56986351], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; false]], class annotated with @DirtiesContext [false] with mode [null].
+13:31:11.122 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@799b2a31 testClass = PaperTest, testInstance = com.sp.fc.web.test.PaperTest@1e5c64d, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@72ceab20 testClass = PaperTest, locations = '{}', classes = '{class com.sp.fc.web.AuthorityTestApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@732850bf, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@238c2232, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6134541, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@36cd1ad3, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@54ef0b8e, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@56986351], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; false]]].
+13:31:11.178 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.4.1)
+
+2021-08-17 13:31:11.944  INFO 17272 --- [    Test worker] com.sp.fc.web.test.PaperTest             : Starting PaperTest using Java 1.8.0_271 on DESKTOP-4QTSG7R with PID 17272 (started by kkn in C:\myProject\SpringStudy\springboot-fc-security\sp-fastcampus-spring-sec-9-4-after-invocation-manager\server\authority-test)
+2021-08-17 13:31:11.948  INFO 17272 --- [    Test worker] com.sp.fc.web.test.PaperTest             : No active profile set, falling back to default profiles: default
+2021-08-17 13:31:14.797  INFO 17272 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2021-08-17 13:31:14.825  INFO 17272 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-17 13:31:14.826  INFO 17272 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-08-17 13:31:15.120  INFO 17272 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-17 13:31:15.120  INFO 17272 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3118 ms
+2021-08-17 13:31:16.486  WARN 17272 --- [    Test worker] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
+2021-08-17 13:31:16.720  WARN 17272 --- [    Test worker] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
+2021-08-17 13:31:16.902  WARN 17272 --- [    Test worker] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
+2021-08-17 13:31:19.283  INFO 17272 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d1d0269, org.springframework.security.web.context.SecurityContextPersistenceFilter@5be2dfb5, org.springframework.security.web.header.HeaderWriterFilter@6939f14c, org.springframework.security.web.authentication.logout.LogoutFilter@71d66df0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1b16c329, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1522d2d0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@632d9941, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3bcc30ce, org.springframework.security.web.session.SessionManagementFilter@aed8479, org.springframework.security.web.access.ExceptionTranslationFilter@237fc5c9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5f5b7ac]
+2021-08-17 13:31:19.576  INFO 17272 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-08-17 13:31:20.730  INFO 17272 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 8ff9e1c5-70fb-429b-803b-f685fcba6cdc
+
+2021-08-17 13:31:20.810  INFO 17272 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8025 (http) with context path ''
+2021-08-17 13:31:20.850  INFO 17272 --- [    Test worker] com.sp.fc.web.test.PaperTest             : Started PaperTest in 9.667 seconds (JVM running for 14.254)
+2021-08-17 13:31:22.200  INFO 17272 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-17 13:31:22.200  INFO 17272 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-17 13:31:22.206  INFO 17272 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+myPapers ----------------------------
+filterObject : null
+returnObject : null
+getMyPapers -----------------------------
+filterObject : null
+returnObject : null
+[Paper(paperId=3, title=시험지3, tutorId=tutor1, studentIds=[user1], state=READY)]
+filterObject : null
+returnObject : null
+getMyPapers -----------------------------
+filterObject : null
+returnObject : null
+response.getBody() : [Paper(paperId=3, title=시험지3, tutorId=tutor1, studentIds=[user1], state=READY)]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 6.7.1</a> at 2021. 8. 17 오후 1:31:25</p>
+</div>
+</div>
+</body>
+</html>

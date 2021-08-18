@@ -9,6 +9,8 @@ import org.springframework.security.access.expression.method.MethodSecurityExpre
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.access.expression.WebSecurityExpressionRoot;
 
+import java.util.List;
+
 @Getter
 @Setter
 public class CustomMethodSecurityExpressionRoot extends SecurityExpressionRoot
@@ -19,6 +21,9 @@ public class CustomMethodSecurityExpressionRoot extends SecurityExpressionRoot
     public CustomMethodSecurityExpressionRoot(Authentication authentication, MethodInvocation invocation) {
         super(authentication);
         this.invocation = invocation;
+
+        System.out.println("filterObject : " + filterObject);
+        System.out.println("returnObject : " + returnObject);
     }
 
     private Object filterObject;

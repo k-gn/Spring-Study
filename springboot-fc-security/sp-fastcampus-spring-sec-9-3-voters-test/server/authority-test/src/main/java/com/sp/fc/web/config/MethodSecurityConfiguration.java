@@ -19,7 +19,7 @@ import org.springframework.security.core.Authentication;
 import java.util.ArrayList;
 import java.util.List;
 
-
+// GlobalMethodSecurityConfiguration - 메소드 권한을 설정 ( Method level에 Security를 설정 )
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class MethodSecurityConfiguration extends GlobalMethodSecurityConfiguration {
 

@@ -6,6 +6,8 @@ import com.sp.fc.web.service.Paper;
 import com.sp.fc.web.service.PaperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.intercept.AbstractSecurityInterceptor;
+import org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PostFilter;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -31,12 +33,15 @@ public class PaperController {
         return paperService.getMyPapers(user.getUsername());
     }
 
-    @Secured({"ROLE_USER", "RUN_AS_PRIMARY"})
+    // RUN_AS 만 있으면 에러 난다. 최소한 넘어갈 수 있는 권한이 하나이상 같이 있어야 된다.
+    // 컨트롤러 단에서 통과 후 통과한 사용자에 권한에 RUN_AS 앞에 ROLE_ 가 붙은 권한이 추가된다. (컨트롤러 단에서 임시권한 부여)
+    @Secured({"ROLE_USER", "RUN_AS_PRIMARY"}) // 임시 권한은 RUN_AS 로 시작
     @GetMapping("/allpapers")
     public List<Paper> allpapers(@AuthenticationPrincipal User user){
         return paperService.getAllPapers();
     }
 
+    // 직접 만든 어노테이션을 CustomMetadataSource 를 통해서 등록해 사용
     @CustomSecurityTag("SCHOOL_PRIMARY")
     @GetMapping("/getPapersByPrimary")
     public List<Paper> getPapersByPrimary(@AuthenticationPrincipal User user){
@@ -49,5 +54,7 @@ public class PaperController {
     public Paper getPaper(@AuthenticationPrincipal User user, @PathVariable Long paperId){
         return paperService.getPaper(paperId);
     }
+
+    // annotation -> securityInterceptor -> metadataSource -> manager -> voter
 
 }

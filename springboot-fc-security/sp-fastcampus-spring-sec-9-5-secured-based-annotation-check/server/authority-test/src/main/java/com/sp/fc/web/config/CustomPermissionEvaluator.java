@@ -35,7 +35,7 @@ public class CustomPermissionEvaluator implements PermissionEvaluator {
         if(paper.getState() == Paper.State.PREPARE) return false;
 
         boolean canUse = paper.getStudentIds().stream().filter(userId -> userId.equals(authentication.getName()))
-                .findAny().isPresent();
+                .findAny().isPresent(); // findFirst()와 findAny() 메소드는 해당 스트림에서 첫 번째 요소를 참조하는 Optional 객체를 반환
 
         return canUse;
     }

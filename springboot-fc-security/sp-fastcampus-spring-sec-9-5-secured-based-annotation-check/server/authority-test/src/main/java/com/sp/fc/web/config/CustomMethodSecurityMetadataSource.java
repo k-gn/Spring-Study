@@ -7,6 +7,7 @@ import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.access.method.MethodSecurityMetadataSource;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class CustomMethodSecurityMetadataSource implements MethodSecurityMetadat
     @Override
     public Collection<ConfigAttribute> getAttributes(Method method, Class<?> targetClass) {
         if(method.getName().equals("getPaper") && targetClass == PaperController.class){
-            return List.of(new SecurityConfig("SCHOOL_PRIMARY"));
+            return Arrays.asList(new SecurityConfig("SCHOOL_PRIMARY"));
         }
         return null;
     }

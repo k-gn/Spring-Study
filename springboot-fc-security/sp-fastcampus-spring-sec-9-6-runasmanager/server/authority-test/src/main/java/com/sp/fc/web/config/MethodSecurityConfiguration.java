@@ -40,10 +40,16 @@ public class MethodSecurityConfiguration extends GlobalMethodSecurityConfigurati
         return new CustomMetadataSource();
     }
 
+    // 기존에 @Secured 기반으로 작업된 사이트에서 필요에 따라 임시권한을 줄 수 있도록 설계된 것이 바로 RunAs 기능
+    // 특정 상황에서 특정 권한을 가진 사람은 특별히 임시 권한을 주는 것
+    // RunAsUserToken 을 만들어 기존에 있던 SecurityContextHolder 에 SecurityContext 와 교체하고,
+    // finallyInvocation 에서 제거 후 원래의 SecurityContext 를 다시 넣어준다.
+    // RunAsUserToken 은 그냥 ROLE_RUN_AS_... 권한이 추가된 토큰
+    // GlobalMethodSecurityConfiguration 을 통해 설정 가능
     @Override
     protected RunAsManager runAsManager() {
         RunAsManagerImpl runas = new RunAsManagerImpl();
-        runas.setKey("runas");
+        runas.setKey("runas"); // RunAsUserToken 인증 해쉬 키값 지정
         return runas;
     }
 

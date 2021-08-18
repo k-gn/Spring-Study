@@ -14,6 +14,7 @@ import org.springframework.util.ClassUtils;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class CustomMetadataSource implements MethodSecurityMetadataSource {
     public Collection<ConfigAttribute> getAttributes(Method method, Class<?> targetClass) {
         CustomSecurityTag annotation = findAnnotation(method, targetClass, CustomSecurityTag.class);
         if(annotation != null){
-            return List.of(new SecurityConfig(annotation.value()));
+            return Arrays.asList(new SecurityConfig(annotation.value()));
         }
         return null;
     }

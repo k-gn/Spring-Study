@@ -11,7 +11,7 @@ public class CustomVoter implements AccessDecisionVoter<MethodInvocation> {
 
     private String PREFIX = "SCHOOL_";
 
-    @Override
+    @Override // 마킹된 정보를 바탕으로 검사해서 받을지 말지 결정 가능
     public boolean supports(ConfigAttribute attribute) {
         return attribute.getAttribute().startsWith(PREFIX);
     }
