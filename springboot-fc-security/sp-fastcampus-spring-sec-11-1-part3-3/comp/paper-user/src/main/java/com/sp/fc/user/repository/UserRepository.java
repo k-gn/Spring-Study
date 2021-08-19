@@ -14,6 +14,7 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long> {
 
 
+    // clearAutomatically - 해당 쿼리 메서드 실행 직 후, 영속성 컨텍스트를 clear 할 것인지를 지정하는 Attribute
     @Modifying(clearAutomatically = true)
     @Query("update User set name=?2, updated=?3 where userId=?1")
     void updateUserName(Long userId, String userName, LocalDateTime update);

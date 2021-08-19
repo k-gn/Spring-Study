@@ -46,8 +46,10 @@ public class UserTest extends WithUserTest {
     @Test
     void 사용자_생성 () {
         userTestHelper.createUser(school, "user1");
+        // findAll 은 가끔 iterator 로 리턴할 때가 있다. 그럴 경우를 대비해 spliterator() 를 사용해서 List 객체로 확실히 받도록 설정
         List<User> list = StreamSupport.stream(userRepository.findAll().spliterator(), false)
                 .collect(Collectors.toList());
+//        List<User> list = userRepository.findAll();
         assertEquals(1,list.size());
         UserTestHelper.assertUser(school, list.get(0), "user1");
     }
@@ -103,6 +105,7 @@ public class UserTest extends WithUserTest {
     @Test
     void 이메일_중복문제 () {
         userTestHelper.createUser(school, "user1");
+        // unique 위배 시 DataIntegrityViolationException 발생
         assertThrows(DataIntegrityViolationException.class, ()->{
             userTestHelper.createUser(school, "user1");
         });

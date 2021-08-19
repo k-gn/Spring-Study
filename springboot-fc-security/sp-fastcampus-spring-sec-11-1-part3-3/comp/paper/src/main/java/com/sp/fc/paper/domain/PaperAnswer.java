@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 @Table(name="sp_paper_answer")
-public class PaperAnswer {
+public class PaperAnswer { // 문제 답
 
     @JsonIgnore
     @ManyToOne
@@ -32,6 +32,7 @@ public class PaperAnswer {
         private Integer num; // 1-base
     }
 
+    // 복합 PK
     @EmbeddedId
     private PaperAnswerId id;
 

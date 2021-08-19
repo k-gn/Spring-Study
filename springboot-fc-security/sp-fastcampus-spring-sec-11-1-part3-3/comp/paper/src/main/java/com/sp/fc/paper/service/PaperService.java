@@ -30,6 +30,7 @@ public class PaperService {
     private final PaperRepository paperRepository;
     private final PaperAnswerRepository paperAnswerRepository;
 
+    // 시험지 저장
     protected Paper save(Paper paper){
         if(paper.getPaperId() == null){
             paper.setCreated(LocalDateTime.now());
@@ -37,6 +38,7 @@ public class PaperService {
         return paperRepository.save(paper);
     }
 
+    // 템플릿 시험지를 학생들에게 배부
     @Transactional
     public List<Paper> publishPaper(long paperTemplateId, List<Long> studyIdList){
         List<Paper> papers = paperTemplateService.findById(paperTemplateId).map(paperTemplate ->
@@ -49,13 +51,14 @@ public class PaperService {
                                     .studyUserId(study.getUserId())
                                     .total(paperTemplate.getTotal())
                                     .build();
-                            return save(paper);
+                            return save(paper); // 이런식으로 쓸 경우 사이즈가 큰 경우 비정형 DB를 써서 데이터를 관리하는 경우가 더 좋다.
                         }).collect(Collectors.toList())
         ).orElseThrow(()->new IllegalArgumentException(paperTemplateId+" 시험지 템플릿이 존재하지 않습니다."));
         paperTemplateService.updatePublishedCount(paperTemplateId, papers.size());
         return papers;
     }
 
+    // 시험지 삭제
     public void removePaper(long paperTemplateId, List<Long> studyIdList){
         paperRepository.findAllByPaperTemplateIdAndStudyUserIdIn(paperTemplateId, studyIdList)
                 .forEach(paper -> {
@@ -63,6 +66,8 @@ public class PaperService {
                 });
     }
 
+
+    // 문제에 답을 등록
     @Transactional
     public void answer(Long paperId, Long problemId, int num, String answer){
         paperRepository.findById(paperId).ifPresentOrElse(paper->{
@@ -95,6 +100,7 @@ public class PaperService {
         }, ()->new IllegalArgumentException(paperId+" 시험지를 찾을 수 없습니다."));
     }
 
+    // 시험을 다 봤을 경우 제출
     @Transactional
     public void paperDone(Long paperId){
         // 시험을 끝냈으면 해당 시험지의 답안을 비교해서 채점 한다.

@@ -22,6 +22,7 @@ public class PaperTemplateService {
     private final PaperTemplateRepository paperTemplateRepository;
     private final ProblemService problemService;
 
+    // 템플릿 시험지 저장
     public PaperTemplate save(PaperTemplate paperTemplate) {
         if(paperTemplate.getPaperTemplateId() == null){
             paperTemplate.setCreated(LocalDateTime.now());
@@ -30,6 +31,7 @@ public class PaperTemplateService {
         return paperTemplateRepository.save(paperTemplate);
     }
 
+    // 템플릿 시험지에 문제 추가
     public Problem addProblem(long paperTemplateId, Problem problem){
         problem.setPaperTemplateId(paperTemplateId);
         return findById(paperTemplateId).map(paperTemplate -> {
@@ -52,6 +54,7 @@ public class PaperTemplateService {
         return paperTemplateRepository.findById(paperTemplateId);
     }
 
+    // 템플릿 시험지에 문제 삭제
     public PaperTemplate removeProblem(long paperTemplateId, long problemId){
         return findById(paperTemplateId).map(paperTemplate -> {
             if(paperTemplate.getProblemList() == null){
@@ -88,6 +91,7 @@ public class PaperTemplateService {
         });
     }
 
+    // 템플릿 시험지의 문제 답들을 Map으로 리턴
     @Transactional(readOnly = true)
     public Map<Integer, String> getPaperAnswerSheet(Long paperTemplateId) {
         Optional<PaperTemplate> template = findById(paperTemplateId);

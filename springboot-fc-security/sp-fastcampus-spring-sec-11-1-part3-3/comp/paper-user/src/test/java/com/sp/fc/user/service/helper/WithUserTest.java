@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
 public class WithUserTest {
+    
+    // 중복되는 값들을 모아둠
 
     @Autowired
     protected SchoolRepository schoolRepository;

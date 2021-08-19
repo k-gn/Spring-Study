@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+// 테스트 시 유용한 헬퍼 클래스
 @RequiredArgsConstructor
 public class SchoolTestHelper {
 

@@ -13,7 +13,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DataJpaTest
+@DataJpaTest // JPA 관련 테스트 설정만 로드
 public class SchoolTest {
 
     @Autowired
@@ -25,7 +25,7 @@ public class SchoolTest {
 
     @BeforeEach
     void before(){
-        this.schoolRepository.deleteAll();
+        this.schoolRepository.deleteAll(); // 테스트를 위해 항상 진행 전 비우기
         this.schoolService = new SchoolService(schoolRepository);
         this.schoolTestHelper = new SchoolTestHelper(this.schoolService);
         school = this.schoolTestHelper.createSchool("테스트 학교", "서울");

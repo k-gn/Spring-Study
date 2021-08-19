@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @Builder
 @Entity
 @Table(name="sp_paper")
-public class Paper {
+public class Paper { // 학생들이 풀 시험지
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

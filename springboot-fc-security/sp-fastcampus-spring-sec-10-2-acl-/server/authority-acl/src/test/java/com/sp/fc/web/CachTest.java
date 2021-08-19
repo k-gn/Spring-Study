@@ -23,6 +23,7 @@ public class CachTest {
     private CacheManager cacheManager;
 
     Optional<Paper> getPaper(Long id){
+        // 매번 테이블에 접근하는 건 DB에 부하를 줄 수 있어서 캐시 기술을 사용
         return Optional.ofNullable(cacheManager.getCache("papers").get(id, Paper.class));
     }
 

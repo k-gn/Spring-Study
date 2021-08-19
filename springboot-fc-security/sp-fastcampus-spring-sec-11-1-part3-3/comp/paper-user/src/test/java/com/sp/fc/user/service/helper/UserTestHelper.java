@@ -4,6 +4,8 @@ import com.sp.fc.user.domain.Authority;
 import com.sp.fc.user.domain.School;
 import com.sp.fc.user.domain.User;
 import com.sp.fc.user.service.UserService;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -30,6 +32,7 @@ public class UserTestHelper {
     }
 
     public User createUser(School school, String name){
+        System.out.println("passwordEncoder : " + passwordEncoder);
         User user = makeUser(school, name);
         user.setPassword(passwordEncoder.encode(name+"123"));
         return userService.save(user);

@@ -9,13 +9,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication
+@SpringBootApplication // 모듈에서 테스트하기 위해 지정
 public class PaperUserTestApp {
 
     public static void main(String[] args) {
         SpringApplication.run(PaperUserTestApp.class, args);
     }
 
+    // 내부에 설정 클래스 지정 ( 실행 시 TEST 쪽에선 PaperUserModule 이 동작안해서 따로 테스트쪽에 별도로 다시 지정 )
     @Configuration
     @ComponentScan("com.sp.fc.user")
     @EnableJpaRepositories(basePackages = {

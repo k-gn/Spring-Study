@@ -26,7 +26,7 @@ public class SchoolService {
     }
 
     public Optional<School> updateName(Long schoolId, String name){
-        return schoolRepository.findById(schoolId).map(school -> {
+        return schoolRepository.findById(schoolId).map(school -> { // Optional 도 map 을 쓸수 있구나,,!
             school.setName(name);
             schoolRepository.save(school);
             return school;
@@ -38,7 +38,7 @@ public class SchoolService {
     }
 
     public List<School> findAllByCity(String city) {
-        return schoolRepository.findAllByCity(city);
+        return schoolRepository.findByCity(city);
     }
 
 }

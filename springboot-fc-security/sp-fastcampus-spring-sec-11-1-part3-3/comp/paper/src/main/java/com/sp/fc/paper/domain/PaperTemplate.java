@@ -16,7 +16,7 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name="sp_paper_template")
-public class PaperTemplate {
+public class PaperTemplate { // 선생님이 만들 시험지
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,15 +29,15 @@ public class PaperTemplate {
     @Transient
     private User creator;
 
-    private int total;
+    private int total; // 문제 수
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(foreignKey = @ForeignKey(name="paperTemplateId"))
     private List<Problem> problemList;
 
-    private long publishedCount;
+    private long publishedCount; // 배부된 시험지 갯수
 
-    private long completeCount;
+    private long completeCount; // 완료된 시험지 갯수
 
     @Column(updatable = false)
     private LocalDateTime created;

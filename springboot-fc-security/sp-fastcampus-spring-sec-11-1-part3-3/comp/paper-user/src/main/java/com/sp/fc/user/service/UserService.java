@@ -45,14 +45,18 @@ public class UserService {
     }
 
     public Map<Long, User> getUsers(List<Long> userIds){
+        // spliterator : 개별 요소를 탐색하는 또 다른 유형의 Iterator 인터페이스, 병렬 작업에 특화, Stream안에서만 사용
         return StreamSupport.stream(userRepository.findAllById(userIds).spliterator(), false)
-                .collect(Collectors.toMap(User::getUserId, Function.identity()));
+                .collect(Collectors.toMap(User::getUserId, Function.identity())); // Function.identity() : 실제 요소
     }
 
     public void addAuthority(Long userId, String authority){
         userRepository.findById(userId).ifPresent(user->{
-            Authority newRole = new Authority(user.getUserId(), authority);
+            Authority newRole = new Authority();
+            newRole.setUserId(user.getUserId());
+            newRole.setAuthority(authority);
             if(user.getAuthorities() == null){
+                // 권한 중복 방지를 위한 Set 컬렉션 사용
                 HashSet<Authority> authorities = new HashSet<>();
                 authorities.add(newRole);
                 user.setAuthorities(authorities);
@@ -70,7 +74,9 @@ public class UserService {
     public void removeAuthority(Long userId, String authority){
         userRepository.findById(userId).ifPresent(user->{
             if(user.getAuthorities()==null) return;
-            Authority targetRole = new Authority(user.getUserId(), authority);
+            Authority targetRole = new Authority();
+            targetRole.setUserId(user.getUserId());
+            targetRole.setAuthority(authority);
             if(user.getAuthorities().contains(targetRole)){
                 user.setAuthorities(
                         user.getAuthorities().stream().filter(auth->!auth.equals(targetRole))

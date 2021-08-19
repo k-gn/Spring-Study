@@ -6,6 +6,6 @@ dependencies {
     testRuntime("com.h2database:h2")
 
     compile project(":comp-paper-user")
-    testCompile project(":comp-paper-user").sourceSets.test.output
+    testCompile project(":comp-paper-user").sourceSets.test.output // sourceSets 에 테스트된 테스트 클래스를 테스트 시에 사용
 }
 

@@ -39,7 +39,7 @@ public class AclGlobalMethodConfig extends GlobalMethodSecurityConfiguration {
     @Override
     protected MethodSecurityExpressionHandler createExpressionHandler() {
         DefaultMethodSecurityExpressionHandler expressionHandler = new DefaultMethodSecurityExpressionHandler();
-        expressionHandler.setPermissionEvaluator(aclPermissionEvaluator());
+        expressionHandler.setPermissionEvaluator(aclPermissionEvaluator()); // ACL 등록
         return expressionHandler;
     }
 
