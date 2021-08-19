@@ -5,8 +5,9 @@ apply from: "../web-common.gradle"
 dependencies {
 
     implementation("$boot:spring-boot-starter-data-jpa")
-    runtime("mysql:mysql-connector-java")
+    runtime('org.mariadb.jdbc:mariadb-java-client')
 
+    // modules add
     compile project(":comp-paper")
     compile project(":comp-paper-user")
     compile project(":web-site-manager")

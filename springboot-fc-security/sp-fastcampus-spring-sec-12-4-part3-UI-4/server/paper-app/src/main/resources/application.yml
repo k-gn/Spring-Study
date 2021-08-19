@@ -10,10 +10,10 @@ spring:
     show-sql: true
 
   datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3308/security-demo?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Seoul
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/securityDemo?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Seoul
     username: jongwon
-    password: "whddnjs121!"
+    password: whddnjs121!
 
   devtools:
     livereload:
@@ -24,7 +24,7 @@ spring:
   thymeleaf:
     prefix: classpath:/templates/
     cache: false
-    check-template-location: true
+    check-template-location: true # templates 디렉토리에 파일이 있는지 없는지 체크
     suffix: .html
 
 #  web:

@@ -56,7 +56,7 @@ public class OnlinePaperSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .formLogin(login->{
-                    login.loginPage("/login")
+                    login.loginPage("/login") // custom login page url (get request)
                     ;
                 })
                 .logout(logout->{
