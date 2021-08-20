@@ -31,6 +31,6 @@ spring:
 #    resources:
 #      static-locations:
 
-logging:
+logging: # 실행 시 모듈들도 실행되는지 확인 가능
   level:
     org.springframework.web: trace

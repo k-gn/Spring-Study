@@ -16,6 +16,7 @@ import java.util.Set;
 
 @Component
 @RequiredArgsConstructor
+// 초기 구동 시점에 run 메소드가 실행된다.
 public class DBInit implements CommandLineRunner {
 
     private final UserService userService;

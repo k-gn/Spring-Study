@@ -120,12 +120,12 @@
 
             schoolSel.addEventListener('change', ()=>{
                 const value= schoolSel.options[schoolSel.selectedIndex].value;
-                fetch("/teachers?schoolId="+value).then(function(response){
-                    return response.json();
-                }).then(function(data){
+                fetch("/teachers?schoolId="+value).then(function(response){ // response 처리
+                    return response.json(); // response -> json 파싱
+                }).then(function(data){ // 파싱된 json 처리
                     const options = '<option>선택</option>'+data.map(t=>`<option value="${t.userId}">${t.name}</option>`).join('');
                     $(teacherSel).html(options);
-                }).catch(function(err){
+                }).catch(function(err){ // 예외 시 처리
                     console.warn('Something went wrong.', err);
                 })
             })

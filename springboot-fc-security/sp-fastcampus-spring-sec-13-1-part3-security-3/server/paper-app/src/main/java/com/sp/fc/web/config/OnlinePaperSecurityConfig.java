@@ -35,6 +35,7 @@ public class OnlinePaperSecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(passwordEncoder());
     }
 
+    // rememberService 를 직접 만들 시 이 안에서 관련 설정을 해줘야 한다.
     private RememberMeServices rememberMeServices(){
         TokenBasedRememberMeServices rememberMeServices = new TokenBasedRememberMeServices(
                 "paper-site-remember-me",
@@ -64,6 +65,11 @@ public class OnlinePaperSecurityConfig extends WebSecurityConfigurerAdapter {
                     ;
                 })
                 .rememberMe(config->{
+//                            config.rememberMeParameter("remember-me")
+//                                    .key("papaer-site")
+//                                    .tokenValiditySeconds(3600)
+//                                    .userDetailsService(userSecurityService)
+//                                    .alwaysRemember(true)
                             config.rememberMeServices(rememberMeServices())
                             ;
                 })
@@ -73,6 +79,7 @@ public class OnlinePaperSecurityConfig extends WebSecurityConfigurerAdapter {
                 })
                 .authorizeRequests(config->{
                     config
+                            // /*  패턴은 그러니까 /, /aaa, /bbb 등등에 맵핑이 되지만 /aaa/bbb는 /*에 맵핑이 안되고, /**에는 맵핑된다.
                             .antMatchers("/").permitAll()
                             .antMatchers("/login").permitAll()
                             .antMatchers("/error").permitAll()

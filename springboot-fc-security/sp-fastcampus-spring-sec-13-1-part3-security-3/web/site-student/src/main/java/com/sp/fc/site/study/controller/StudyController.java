@@ -54,6 +54,7 @@ public class StudyController {
         return "/study/paper/papers.html";
     }
 
+    // 결과 목록
     @GetMapping("/results")
     public String results(
             @RequestParam(value="pageNum", defaultValue = "1") Integer pageNum,

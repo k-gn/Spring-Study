@@ -22,11 +22,13 @@ public class SpLoginFilter extends UsernamePasswordAuthenticationFilter {
 
     public SpLoginFilter(
             AuthenticationManager authenticationManager,
-            RememberMeServices rememberMeServices
+            RememberMeServices rememberMeServices // UsernamePasswordAuthenticationFilter 가 필요해하기 때문에 주입
     ){
         this.authenticationManager = authenticationManager;
+        // 로그인 요청 매핑
         this.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/login","POST"));
-        this.setAuthenticationSuccessHandler(new LoginSuccessHandler());
+        // 직접 구현한 객체로 세팅
+        this.setAuthenticationSuccessHandler(new LoginSuccessHandler()); 
         this.setAuthenticationFailureHandler(new LoginFailureHandler());
         this.setRememberMeServices(rememberMeServices);
     }

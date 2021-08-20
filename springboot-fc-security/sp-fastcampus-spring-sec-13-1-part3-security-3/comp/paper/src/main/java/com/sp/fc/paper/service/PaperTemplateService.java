@@ -83,6 +83,7 @@ public class PaperTemplateService {
         problemService.updateProblem(problemId, content, answer);
     }
 
+    // 근데 이렇게 하면 어드민 권한도 접근을 못함 -> 따로 로직을 짜거나, ExpressionContextRoot에 isAdmin 같은 헬퍼메소드를 추가해 처리
 //    @PostAuthorize("returnObject.isEmpty() || returnObject.get().userId == principal.userId")
     @Transactional(readOnly = true)
     public Optional<PaperTemplate> findProblemTemplate(Long paperTemplateId) {

@@ -49,6 +49,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         if (session == null) {
             return;
         }
+        // 로그인 성공 후 세션에 있는 에러값을 제거. (로그인을 실패하면 세션에 에러가 저장된다.)
         session.removeAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
     }
 
@@ -68,7 +69,10 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
     }
 
     protected String determineTargetUrl(final HttpServletRequest request, SavedRequest savedRequest, final Authentication authentication) {
-        if(savedRequest != null) {
+
+        // requestCache 를 통해 savedRequest (이전 url) 을 받아 리다이렉트
+        // 인증이 필요한 페이지에 인증 없이 접근 시 SavedRequest 에 해당 url 이 저장된 후 login 페이지로 이동된다.
+       if(savedRequest != null) {
             String redirectUrl = savedRequest.getRedirectUrl();
             if(redirectUrl != null && !redirectUrl.startsWith("/login")) {
                 return savedRequest.getRedirectUrl();

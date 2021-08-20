@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequiredArgsConstructor
 public class SchoolMngController {
 
+    // 현재 필터 시큐리티로 컷팅중이고, PrePost 어노테이션 등의 (메소드 시큐리티) 처리는 필요할 때 추가
+
     private final SchoolService schoolService;
 
     private final UserService userService;

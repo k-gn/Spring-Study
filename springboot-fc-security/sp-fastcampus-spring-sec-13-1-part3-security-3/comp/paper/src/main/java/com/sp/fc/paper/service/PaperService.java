@@ -159,7 +159,8 @@ public class PaperService {
         return paperRepository.findAllByStudyUserIdAndStateInOrderByCreatedDesc(studyUserId, states);
     }
 
-    @PostAuthorize("returnObject.isEmpty() || returnObject.get().studyUserId == principal.userId")
+    // 자기 시험지만 볼 수 있도록 권한 설정
+    @PostAuthorize("returnObject.isEmpty() && returnObject.get().studyUserId == principal.userId")
     @Transactional(readOnly = true)
     public Optional<Paper> findPaper(Long paperId) {
         return paperRepository.findById(paperId).map(paper->{

@@ -62,6 +62,7 @@ public class HomeController {
             HttpServletRequest request,
             Model model
     ){
+        // rememberMe 시 권한 거부되면 로그인 페이지로 오는걸 방지
         if(user!=null && user.isEnabled()){
             if(user.getAuthorities().contains(Authority.ADMIN_AUTHORITY)){
                 return "redirect:/manager";
@@ -72,6 +73,7 @@ public class HomeController {
             }
         }
         if(site == null) {
+            // 세션이 끊어졌거나, 강제로 로그아웃 처리 되었을 경우 재로그인 시 site 정보를 파악
             SavedRequest savedRequest = requestCache.getRequest(request, null);
             if(savedRequest != null) {
                 site = estimateSite(savedRequest.getRedirectUrl());

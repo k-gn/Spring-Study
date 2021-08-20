@@ -35,6 +35,8 @@ public class Authority implements GrantedAuthority {
     @Id
     private String authority;
 
+    
+    // 권한 객체간의 비교 시 String authority 가 동일하면 같은 객체로 판별하도록 오버라이드
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -48,6 +48,7 @@ public class TeacherController {
         return "/teacher/index";
     }
 
+    // 수강학생 조회
     @GetMapping("/study/list")
     public String studyList(@AuthenticationPrincipal User user, Model model){
         model.addAttribute("menu", "study");
@@ -64,6 +65,7 @@ public class TeacherController {
      * @param model
      * @return
      */
+    // 시험 결과 조회
     @GetMapping("/study/results")
     public String studyResults(
             @RequestParam Long paperTemplateId,
@@ -128,6 +130,7 @@ public class TeacherController {
         return "/teacher/paperTemplate/edit.html";
     }
 
+    // 문제 추가
     @PostMapping(value="/paperTemplate/problem/add", consumes = {"application/x-www-form-urlencoded;charset=UTF-8", MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     public String addProblemToPaperTemplate(
             ProblemInput problemInput,
