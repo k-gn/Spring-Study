@@ -11,6 +11,9 @@ public class SpOAuth2UserService extends DefaultOAuth2UserService {
 
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
+        
+        // 리소스 서버에서 가져온 사용자 정보를 다룰 수 있음
+        
         return super.loadUser(userRequest);
     }
 

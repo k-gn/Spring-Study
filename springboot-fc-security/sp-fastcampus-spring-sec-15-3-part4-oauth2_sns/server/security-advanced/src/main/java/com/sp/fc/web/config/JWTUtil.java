@@ -14,9 +14,11 @@ public class JWTUtil {
     private static final long REFRESH_TIME = 60*60*24*7;
 
     public static String makeAuthToken(SpUser user){
+        System.out.println(Instant.now().getEpochSecond()+AUTH_TIME);
         return JWT.create()
                 .withSubject(user.getUsername())
-                .withClaim("exp", Instant.now().getEpochSecond()+AUTH_TIME)
+                // 자바8 Time API의 Instant 클래스는 시간을 타임스탬프로 다루기 위해서 사용
+                .withClaim("exp", Instant.now().getEpochSecond()+AUTH_TIME) // 만료시간 = 초단위 현재시간 + AUTH_TIME 으로 설정
                 .sign(ALGORITHM);
     }
 

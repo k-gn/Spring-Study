@@ -17,7 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class JWTCheckFilter extends BasicAuthenticationFilter {
+// 매번 들어오는 요청에 토큰을 검사해서 시큐리티 컨텍스트에 넣어주는 필터
+public class JWTCheckFilter extends BasicAuthenticationFilter { // Spring에서 제공해주는 인증 필터, http 헤더를 검증 (GenericFilterBean을 상속받아 사용해도 된다)
 
     private SpUserService userService;
 
@@ -28,6 +29,7 @@ public class JWTCheckFilter extends BasicAuthenticationFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
+        System.out.println("doFilterInternal -----------------------------------------------------------");
         String bearer = request.getHeader(HttpHeaders.AUTHORIZATION);
         if(bearer == null || !bearer.startsWith("Bearer ")){
             chain.doFilter(request, response);
@@ -41,7 +43,7 @@ public class JWTCheckFilter extends BasicAuthenticationFilter {
                     user.getUsername(), null, user.getAuthorities()
             );
             SecurityContextHolder.getContext().setAuthentication(userToken);
-            chain.doFilter(request, response);
+            chain.doFilter(request, response); // 다음 필터로 넘김
         }else{
             throw new TokenExpiredException("Token is not valid");
         }

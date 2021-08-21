@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+// 유효한 사용자라면 인증 토큰을 내려주는 필터
 public class JWTLoginFilter extends UsernamePasswordAuthenticationFilter {
 
     private ObjectMapper objectMapper = new ObjectMapper();
@@ -30,12 +31,15 @@ public class JWTLoginFilter extends UsernamePasswordAuthenticationFilter {
         setFilterProcessesUrl("/login");
     }
 
-    @SneakyThrows
+    @SneakyThrows // @SneakyThrows 어노테이션을 사용하면 명시적인 예외 처리를 생략할 수 있다.
     @Override
     public Authentication attemptAuthentication(
             HttpServletRequest request,
             HttpServletResponse response) throws AuthenticationException
     {
+        // HTTP Request 중 message-body로 넘어온 parameter 확인을 위해서는 getInputStream() 이나 getReader()를 사용
+        // objectMapper 를 통해 ServletInputStream 을 바로 UserLoginForm 로 받을 수 있다.
+        System.out.println("attemptAuthentication -----------------------------------------------------------");
         UserLoginForm userLogin = objectMapper.readValue(request.getInputStream(), UserLoginForm.class);
         if(userLogin.getRefreshToken() == null) {
             UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
