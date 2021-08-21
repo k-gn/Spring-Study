@@ -46,6 +46,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
             @Param("updatedAt") LocalDateTime updatedAt);
 
     // 기본적으로 원하는 컬럼만 뽑았을 경우(프로젝션) 리턴 타입은 Tuple
+    // 프로젝션 대상이 둘 이상이라면 Tuple 타입을 반환 (Projection 기능은 엔티티의 일부 데이터만을 가져오게 하는 기능)
 //    @Query(value = "select b.name as name, b.category as category from Book b")
 //    List<Tuple> findBookNameAndCategory();
 
