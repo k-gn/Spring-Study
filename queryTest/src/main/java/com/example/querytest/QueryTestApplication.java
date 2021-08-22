@@ -1,13 +1,13 @@
-package com.example.querydsltest;
+package com.example.querytest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class QueryDslTestApplication {
+public class QueryTestApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(QueryDslTestApplication.class, args);
+        SpringApplication.run(QueryTestApplication.class, args);
     }
 
 }
