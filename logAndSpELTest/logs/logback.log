@@ -1,0 +1,58 @@
+[2021-08-22 13:41:37:5765][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2021-08-22 13:41:37:5843][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 3 mappings in 'requestMappingHandlerMapping'
+[2021-08-22 13:41:37:5890][restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+[2021-08-22 13:41:37:5905][restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[2021-08-22 13:44:36:184416][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2021-08-22 13:44:36:184420][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+[2021-08-22 13:44:36:184421][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+[2021-08-22 13:44:36:184421][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+[2021-08-22 13:44:36:184422][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@64296a05
+[2021-08-22 13:44:36:184423][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@4352863e
+[2021-08-22 13:44:36:184423][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[2021-08-22 13:44:36:184423][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+[2021-08-22 13:44:36:184439][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/log", parameters={}
+[2021-08-22 13:44:36:184445][http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.logandspeltest.LogAndSpElTestApplication#getLog()
+[2021-08-22 13:44:36:184602][http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[2021-08-22 13:44:36:184603][http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["console log"]
+[2021-08-22 13:44:36:184618][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2021-08-22 13:56:57:16343][http-nio-8080-exec-1] DEBUG c.e.l.service.LogService - Debug
+[2021-08-22 13:56:57:16344][http-nio-8080-exec-1] INFO  c.e.l.service.LogService - Info
+[2021-08-22 13:56:57:16344][http-nio-8080-exec-1] WARN  c.e.l.service.LogService - Warn
+[2021-08-22 13:56:57:16344][http-nio-8080-exec-1] ERROR c.e.l.service.LogService - Error
+[2021-08-22 14:07:14:14726][http-nio-8080-exec-1] DEBUG c.e.l.service.LogService - Debug
+[2021-08-22 14:07:14:14727][http-nio-8080-exec-1] INFO  c.e.l.service.LogService - Info
+[2021-08-22 14:07:14:14728][http-nio-8080-exec-1] WARN  c.e.l.service.LogService - Warn
+[2021-08-22 14:07:14:14728][http-nio-8080-exec-1] ERROR c.e.l.service.LogService - Error
+[2021-08-22 14:08:20:1403][restartedMain] INFO  c.e.l.LogAndSpElTestApplication - Starting LogAndSpElTestApplication using Java 11.0.11 on DESKTOP-4QTSG7R with PID 12856 (C:\myProject\SpringStudy\logAndSpELTest\build\classes\java\main started by kkn in C:\myProject\SpringStudy\logAndSpELTest)
+[2021-08-22 14:08:20:1403][restartedMain] DEBUG c.e.l.LogAndSpElTestApplication - Running with Spring Boot v2.5.4, Spring v5.3.9
+[2021-08-22 14:08:20:1403][restartedMain] INFO  c.e.l.LogAndSpElTestApplication - No active profile set, falling back to default profiles: default
+[2021-08-22 14:08:25:6608][restartedMain] INFO  c.e.l.LogAndSpElTestApplication - Started LogAndSpElTestApplication in 6.119 seconds (JVM running for 8.788)
+[2021-08-22 14:08:31:13031][http-nio-8080-exec-1] DEBUG c.e.l.service.LogService - Debug
+[2021-08-22 14:08:31:13033][http-nio-8080-exec-1] INFO  c.e.l.service.LogService - Info
+[2021-08-22 14:08:31:13034][http-nio-8080-exec-1] WARN  c.e.l.service.LogService - Warn
+[2021-08-22 14:08:31:13034][http-nio-8080-exec-1] ERROR c.e.l.service.LogService - Error
+[2021-08-22 14:09:47:1405][restartedMain] INFO  c.e.l.LogAndSpElTestApplication - Starting LogAndSpElTestApplication using Java 11.0.11 on DESKTOP-4QTSG7R with PID 16080 (C:\myProject\SpringStudy\logAndSpELTest\build\classes\java\main started by kkn in C:\myProject\SpringStudy\logAndSpELTest)
+[2021-08-22 14:09:47:1405][restartedMain] DEBUG c.e.l.LogAndSpElTestApplication - Running with Spring Boot v2.5.4, Spring v5.3.9
+[2021-08-22 14:09:47:1405][restartedMain] INFO  c.e.l.LogAndSpElTestApplication - No active profile set, falling back to default profiles: default
+[2021-08-22 14:09:52:6443][restartedMain] INFO  c.e.l.LogAndSpElTestApplication - Started LogAndSpElTestApplication in 5.964 seconds (JVM running for 8.847)
+[2021-08-22 14:11:25:6016][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2021-08-22 14:11:25:6110][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 3 mappings in 'requestMappingHandlerMapping'
+[2021-08-22 14:11:25:6157][restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+[2021-08-22 14:11:25:6172][restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[2021-08-22 14:11:32:12663][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2021-08-22 14:11:32:12664][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+[2021-08-22 14:11:32:12665][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+[2021-08-22 14:11:32:12665][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+[2021-08-22 14:11:32:12666][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2b18c0e7
+[2021-08-22 14:11:32:12667][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@655c7916
+[2021-08-22 14:11:32:12667][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[2021-08-22 14:11:32:12667][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+[2021-08-22 14:11:32:12683][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/log", parameters={}
+[2021-08-22 14:11:32:12689][http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.logandspeltest.LogAndSpElTestApplication#getLog()
+[2021-08-22 14:11:32:12842][http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[2021-08-22 14:11:32:12843][http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["console log"]
+[2021-08-22 14:11:32:12857][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2021-08-22 14:15:03:5692][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2021-08-22 14:15:04:5786][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 3 mappings in 'requestMappingHandlerMapping'
+[2021-08-22 14:15:04:5849][restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+[2021-08-22 14:15:04:5864][restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
