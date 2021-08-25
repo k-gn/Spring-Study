@@ -47,7 +47,7 @@ public abstract class Querydsl4RepositorySupport {
 //    private QuerydslRepositorySupport querydslRepositorySupport;
     private final Class domainClass;
     private Querydsl querydsl;
-    private EntityManager entityManager;
+    private EntityManager entityManager; // Spring Boot에서만 이렇게 사용할수 있다 (@Autowired). 원래는 @PersistenceContext 를 사용
     private JPAQueryFactory queryFactory;
 
     public Querydsl4RepositorySupport(Class<?> domainClass) {

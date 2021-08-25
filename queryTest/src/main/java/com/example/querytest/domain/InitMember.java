@@ -35,6 +35,7 @@ public class InitMember {
     // 이 빈이 초기화 되었다는건 @Transactional 을 이용할 수 있다는 시점을 말하므로 우회해서 사용하는게 가능하다.
     @Component
     static class InitMemberService {
+
         @PersistenceContext
         private EntityManager em;
 
