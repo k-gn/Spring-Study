@@ -26,12 +26,23 @@ public class SpELTest implements CommandLineRunner {
     @Value("Literal String")
     String literalString;
 
+    @Value("#{inventor.num}")
+    int num1;
+
+    @Value("#{inventor.add()}")
+    int num2;
+
+
     @Override
     public void run(String... args) throws Exception {
         System.out.println(value);
         System.out.println(greeting);
         System.out.println(trueOrFalse);
         System.out.println(literalString);
+        System.out.println(num1);
+        System.out.println(num2);
+
+        System.out.println("=============================");
 
         // Expression을 이용한 SpEL 파싱
 //        ExpressionParser parser = new SpelExpressionParser();
@@ -41,10 +52,10 @@ public class SpELTest implements CommandLineRunner {
 
         // EvaluationContext를 이용한 SpEL 파싱
         // name, nationality를 파라미터로 갖는 생성자
-        Inventor tesla = new Inventor("Nikola Tesla","Serbian");
+        Inventor tesla = new Inventor("Nikola Tesla","Serbian", 2);
 
         ExpressionParser parser = new SpelExpressionParser();
-        Expression exp = parser.parseExpression("name"); // name 프로퍼티
+        Expression exp = parser.parseExpression("name1"); // name 프로퍼티
 
         // Context에 tesla객체를 넣어준다.
         EvaluationContext context = new StandardEvaluationContext(tesla);
