@@ -34,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // Basic 방식 적용 - Basic Authentication(REST API 인증을 할 때, username, password로 인증을 하는 방법)
                 // 브라우저가 표시하는 대화창 (브라우저에 따라 디자인은 다르지만 기능은 같음)
                 // Spring에서 API를 제공해야 할 때, 선택할 수 있는 방식
-                // 서버에서 내려주는 서버에서 내려주는 로그인 페이지 (폼 로그인) 을 사용할 수 없는 상황에서 사용한다.
+                // 서버에서 내려주는 로그인 페이지 (폼 로그인) 을 사용할 수 없는 상황에서 사용한다.
                 // ex) 자바 스크립트를 통해서 인증 시 사용 가능
                 .httpBasic()
                 ;

@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 // WebApplication 관련된 Bean들만 등록
 
 // 현재 @EnableJpaAuditing이 해당 클래스에 등록되어 있어서 모든 테스트들이 항상 JPA 관련 Bean들을 필요로 하고 있는 상태
-// @WebMvcTest같은 슬라이스 테스트는 JPA 관련 Bean들을 로드하지 않기 때문에 에러가 발생c
+// @WebMvcTest같은 슬라이스 테스트는 JPA 관련 Bean들을 로드하지 않기 때문에 에러가 발생
 // 처리 방법은 개발자 마다 취향이 다를 수 있다. (지금 방법이 젤 협업에 좋은 것 같음)
 @WebMvcTest // @SpringBootTest 어노테이션보다 가볍게 테스트할 수 있음.
 //@MockBean(JpaMetamodelMappingContext.class)

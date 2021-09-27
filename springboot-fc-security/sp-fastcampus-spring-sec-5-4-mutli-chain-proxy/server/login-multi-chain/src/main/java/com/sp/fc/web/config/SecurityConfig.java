@@ -25,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public SecurityConfig(StudentManager studentManager, TeacherManager teacherManager) {
         this.studentManager = studentManager;
         this.teacherManager = teacherManager;
-    }
+    }12
 
 
     @Override

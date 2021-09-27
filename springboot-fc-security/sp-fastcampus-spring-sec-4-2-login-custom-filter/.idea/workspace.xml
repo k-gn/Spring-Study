@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dc84945-c0da-483b-8f62-4b0193d80b51" name="Default Changelist" comment="" />
+    <list default="true" id="8dc84945-c0da-483b-8f62-4b0193d80b51" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +46,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sp-fastcampus-spring-sec-5-2-BasicAuthenticationFilter-Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -96,6 +98,9 @@
       <workItem from="1623113734474" duration="26000" />
       <workItem from="1628842875523" duration="4906000" />
       <workItem from="1628903524711" duration="663000" />
+      <workItem from="1631691008588" duration="5016000" />
+      <workItem from="1631714151925" duration="29000" />
+      <workItem from="1631714307009" duration="72000" />
     </task>
     <servers />
   </component>
